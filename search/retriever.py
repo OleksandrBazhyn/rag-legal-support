@@ -4,6 +4,7 @@ from __future__ import annotations
 import logging
 import os
 from functools import lru_cache
+from pathlib import Path
 from typing import Any
 
 import chromadb
@@ -15,6 +16,9 @@ logger = logging.getLogger(__name__)
 EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "paraphrase-multilingual-mpnet-base-v2")
 CHROMA_HOST = os.getenv("CHROMA_HOST", "localhost")
 CHROMA_PORT = int(os.getenv("CHROMA_PORT", "8001"))
+
+_DEFAULT_CHROMA_DIR = Path.home() / ".chroma_rag_legal"
+CHROMA_PERSIST_DIR = Path(os.getenv("CHROMA_PERSIST_DIR", str(_DEFAULT_CHROMA_DIR)))
 
 
 @lru_cache(maxsize=1)
@@ -36,10 +40,9 @@ def _get_client() -> chromadb.ClientAPI:
         return client
     except Exception:
         logger.warning("ChromaDB HTTP недоступний, використовую локальний persistent режим.")
-        from pathlib import Path
-        chroma_dir = Path(__file__).parent.parent / "chroma_db"
+        CHROMA_PERSIST_DIR.mkdir(parents=True, exist_ok=True)
         return chromadb.PersistentClient(
-            path=str(chroma_dir),
+            path=str(CHROMA_PERSIST_DIR),
             settings=Settings(anonymized_telemetry=False),
         )
 

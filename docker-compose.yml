@@ -12,6 +12,27 @@ services:
       - ANONYMIZED_TELEMETRY=false
       - IS_PERSISTENT=true
 
+  # ── Indexer (Data Ingestion) ─────────────────────────────────────────────────
+  indexer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: api
+    container_name: rag-indexer
+    volumes:
+      - ./data:/app/data
+      - ./chroma_db:/app/chroma_db
+    environment:
+      - CHROMA_HOST=chromadb
+      - CHROMA_PORT=8000
+      - EMBEDDING_MODEL=${EMBEDDING_MODEL:-paraphrase-multilingual-mpnet-base-v2}
+    depends_on:
+      chromadb:
+        condition: service_started
+    command: python -m ingestion.indexer
+    profiles:
+      - init
+
   # ── FastAPI ──────────────────────────────────────────────────────────────────
   api:
     build:

@@ -1,0 +1,96 @@
+{
+  "documents": {
+    "german_law/aufenthaltsgesetz.txt": {
+      "source": "kmein",
+      "github_sha": "42c4d9a4001ce4de0bff4bce3815a4a19c282c86",
+      "file_size_bytes": 511677,
+      "is_valid": true,
+      "last_downloaded": "2026-05-13T16:29:50"
+    },
+    "german_law/asylgesetz.txt": {
+      "source": "kmein",
+      "github_sha": "95ee48e7782475f164d540ced3b238c3a24566ae",
+      "file_size_bytes": 191654,
+      "is_valid": true,
+      "last_downloaded": "2026-05-13T16:29:51"
+    },
+    "german_law/asylbewerberleistungsgesetz.txt": {
+      "source": "kmein",
+      "github_sha": "fe8f8c83782c57c4fb4b407fd17d3f01fa16b827",
+      "file_size_bytes": 60096,
+      "is_valid": true,
+      "last_downloaded": "2026-05-13T16:29:51"
+    },
+    "german_law/beschaeftigungsverordnung.txt": {
+      "source": "kmein",
+      "github_sha": "2f9b8adcf6c36e6311be587eb16d3311d8888c4c",
+      "file_size_bytes": 60286,
+      "is_valid": true,
+      "last_downloaded": "2026-05-13T16:29:51"
+    },
+    "german_law/sgb_ii.txt": {
+      "source": "kmein",
+      "github_sha": "530635a3a8898f0cf3f0093dd6abfd2f6b80aae8",
+      "file_size_bytes": 281583,
+      "is_valid": true,
+      "last_downloaded": "2026-05-13T16:29:52"
+    },
+    "german_law/sgb_xii.txt": {
+      "source": "kmein",
+      "github_sha": "0e93212d86b693701e7ae0d800226fe91ff69be5",
+      "file_size_bytes": 374192,
+      "is_valid": true,
+      "last_downloaded": "2026-05-13T16:29:52"
+    },
+    "ukrainian_context/ua_law_refugees.txt": {
+      "source": "rada",
+      "last_modified_header": "Mon, 16 Feb 2026 06:00:25 GMT",
+      "file_size_bytes": 179581,
+      "is_valid": true,
+      "last_downloaded": "2026-05-13T16:30:12"
+    },
+    "ukrainian_context/ua_labor_code.txt": {
+      "source": "rada",
+      "last_modified_header": "Sun, 15 Feb 2026 08:15:28 GMT",
+      "file_size_bytes": 512000,
+      "is_valid": true,
+      "last_downloaded": "2026-05-13T16:30:21"
+    },
+    "ukrainian_context/ua_employment_law.txt": {
+      "source": "rada",
+      "last_modified_header": "Sun, 15 Feb 2026 08:15:28 GMT",
+      "file_size_bytes": 446007,
+      "is_valid": true,
+      "last_downloaded": "2026-05-13T16:30:28"
+    },
+    "ukrainian_context/ua_social_services.txt": {
+      "source": "rada",
+      "last_modified_header": "Fri, 12 Dec 2025 00:05:06 GMT",
+      "file_size_bytes": 392433,
+      "is_valid": true,
+      "last_downloaded": "2026-05-13T16:30:36"
+    },
+    "german_law/eu_directive_temporary_protection.txt": {
+      "source": "eurlex",
+      "note": "EUR-Lex WAF-blocked; accurate synthetic fallback based on official directive text",
+      "celex": "32001L0055",
+      "file_size_bytes": 10486,
+      "is_valid": true,
+      "last_downloaded": "2026-05-13T16:37:46"
+    },
+    "german_law/eu_directive_reception_conditions.txt": {
+      "source": "eurlex",
+      "note": "EUR-Lex WAF-blocked; accurate synthetic fallback based on official directive text",
+      "celex": "32013L0033",
+      "file_size_bytes": 8186,
+      "is_valid": true,
+      "last_downloaded": "2026-05-13T16:37:46"
+    }
+  },
+  "rada_token": {
+    "value": "c9475dc9-2d6d-4e92-89bf-36d3226f3ef2",
+    "obtained_at": "2026-05-13T16:29:53",
+    "valid_until": "2026-05-13T23:59:59"
+  },
+  "last_full_collection": "2026-05-13T16:30:36"
+}

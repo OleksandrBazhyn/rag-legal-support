@@ -11,7 +11,7 @@ chromadb==0.6.3
 sentence-transformers==3.1.1
 
 # LLM
-openai==1.50.0
+openai==2.36.0
 
 # Document loading
 pdfplumber==0.11.0

@@ -73,3 +73,9 @@ class HealthResponse(BaseModel):
 class ReindexResponse(BaseModel):
     status: str
     documents_indexed: int
+
+
+class RefreshDataResponse(BaseModel):
+    status: str
+    updated_files: list[str]
+    reindexed: int
