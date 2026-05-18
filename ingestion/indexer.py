@@ -8,6 +8,7 @@ from pathlib import Path
 
 import chromadb
 from chromadb.config import Settings
+from functools import lru_cache
 from sentence_transformers import SentenceTransformer
 
 from ingestion.loader import load_directory
@@ -49,9 +50,13 @@ def _get_chroma_client() -> chromadb.HttpClient | chromadb.PersistentClient:
         )
 
 
+@lru_cache(maxsize=1)
 def _get_embedding_model() -> SentenceTransformer:
+    """Завантажує модель один раз і кешує на весь lifetime процесу."""
     logger.info("Завантаження моделі ембеддингів: %s", EMBEDDING_MODEL)
-    return SentenceTransformer(EMBEDDING_MODEL)
+    # device='cpu' обов'язковий: torch 2.x використовує meta-тензори при lazy-load,
+    # і неявне переміщення на пристрій дає NotImplementedError у контейнері без GPU.
+    return SentenceTransformer(EMBEDDING_MODEL, device="cpu")
 
 
 def _get_or_create_collection(client: chromadb.ClientAPI, name: str) -> chromadb.Collection:
@@ -77,6 +82,8 @@ def add_documents(chunks: list[dict], client: chromadb.ClientAPI | None = None) 
     german_chunks = [c for c in chunks if c["category"] == "german_law"]
     ukrainian_chunks = [c for c in chunks if c["category"] == "ukrainian_context"]
 
+    chroma_batch_size = 5000  # ChromaDB max ~5461, беремо з запасом
+
     total = 0
     for col, col_chunks in [(german_col, german_chunks), (ukrainian_col, ukrainian_chunks)]:
         if not col_chunks:
@@ -93,7 +100,13 @@ def add_documents(chunks: list[dict], client: chromadb.ClientAPI | None = None) 
             }
             for c in col_chunks
         ]
-        col.add(ids=ids, embeddings=embeddings, documents=texts, metadatas=metadatas)
+        for i in range(0, len(col_chunks), chroma_batch_size):
+            col.add(
+                ids=ids[i:i + chroma_batch_size],
+                embeddings=embeddings[i:i + chroma_batch_size],
+                documents=texts[i:i + chroma_batch_size],
+                metadatas=metadatas[i:i + chroma_batch_size],
+            )
         total += len(col_chunks)
         logger.info("Додано %d чанків до колекції '%s'", len(col_chunks), col.name)
 

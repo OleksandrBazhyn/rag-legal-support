@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 from enum import Enum
+from typing import Literal
 
 from pydantic import BaseModel, Field
 
@@ -49,9 +50,25 @@ class UserProfile(BaseModel):
     model_config = {"use_enum_values": True}
 
 
+class ChatMessage(BaseModel):
+    # Literal-тип блокує ін'єкцію "system" ролі через chat_history
+    role: Literal["user", "assistant"] = Field(..., description="'user' або 'assistant'")
+    content: str = Field(..., description="Текст повідомлення")
+
+
 class QueryRequest(BaseModel):
-    question: str = Field(..., min_length=3, description="Правовий запит користувача")
+    question: str = Field(
+        ...,
+        min_length=3,
+        max_length=2000,
+        description="Правовий запит користувача (3–2000 символів)",
+    )
     profile: UserProfile = Field(default_factory=UserProfile)
+    chat_history: list[ChatMessage] = Field(
+        default_factory=list,
+        max_length=10,
+        description="Останні повідомлення діалогу (до 10)",
+    )
 
 
 class QueryResponse(BaseModel):

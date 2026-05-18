@@ -5,70 +5,72 @@
       "github_sha": "42c4d9a4001ce4de0bff4bce3815a4a19c282c86",
       "file_size_bytes": 511677,
       "is_valid": true,
-      "last_downloaded": "2026-05-13T16:29:50"
+      "last_downloaded": "2026-05-13T20:12:36"
     },
     "german_law/asylgesetz.txt": {
       "source": "kmein",
       "github_sha": "95ee48e7782475f164d540ced3b238c3a24566ae",
       "file_size_bytes": 191654,
       "is_valid": true,
-      "last_downloaded": "2026-05-13T16:29:51"
+      "last_downloaded": "2026-05-13T20:12:36"
     },
     "german_law/asylbewerberleistungsgesetz.txt": {
       "source": "kmein",
       "github_sha": "fe8f8c83782c57c4fb4b407fd17d3f01fa16b827",
       "file_size_bytes": 60096,
       "is_valid": true,
-      "last_downloaded": "2026-05-13T16:29:51"
+      "last_downloaded": "2026-05-13T20:12:37"
     },
     "german_law/beschaeftigungsverordnung.txt": {
       "source": "kmein",
       "github_sha": "2f9b8adcf6c36e6311be587eb16d3311d8888c4c",
       "file_size_bytes": 60286,
       "is_valid": true,
-      "last_downloaded": "2026-05-13T16:29:51"
+      "last_downloaded": "2026-05-13T20:12:37"
     },
     "german_law/sgb_ii.txt": {
       "source": "kmein",
       "github_sha": "530635a3a8898f0cf3f0093dd6abfd2f6b80aae8",
       "file_size_bytes": 281583,
       "is_valid": true,
-      "last_downloaded": "2026-05-13T16:29:52"
+      "last_downloaded": "2026-05-13T20:12:38"
     },
     "german_law/sgb_xii.txt": {
       "source": "kmein",
       "github_sha": "0e93212d86b693701e7ae0d800226fe91ff69be5",
       "file_size_bytes": 374192,
       "is_valid": true,
-      "last_downloaded": "2026-05-13T16:29:52"
+      "last_downloaded": "2026-05-13T20:12:38"
     },
     "ukrainian_context/ua_law_refugees.txt": {
       "source": "rada",
       "last_modified_header": "Mon, 16 Feb 2026 06:00:25 GMT",
       "file_size_bytes": 179581,
       "is_valid": true,
-      "last_downloaded": "2026-05-13T16:30:12"
+      "last_downloaded": "2026-05-13T20:12:59",
+      "validation_error": "Файл містить HTML-розмітку (можлива помилкова сторінка)"
     },
     "ukrainian_context/ua_labor_code.txt": {
       "source": "rada",
       "last_modified_header": "Sun, 15 Feb 2026 08:15:28 GMT",
       "file_size_bytes": 512000,
       "is_valid": true,
-      "last_downloaded": "2026-05-13T16:30:21"
+      "last_downloaded": "2026-05-13T20:13:08",
+      "validation_error": "Файл містить HTML-розмітку (можлива помилкова сторінка)"
     },
     "ukrainian_context/ua_employment_law.txt": {
       "source": "rada",
       "last_modified_header": "Sun, 15 Feb 2026 08:15:28 GMT",
       "file_size_bytes": 446007,
       "is_valid": true,
-      "last_downloaded": "2026-05-13T16:30:28"
+      "last_downloaded": "2026-05-13T20:13:15"
     },
     "ukrainian_context/ua_social_services.txt": {
       "source": "rada",
       "last_modified_header": "Fri, 12 Dec 2025 00:05:06 GMT",
       "file_size_bytes": 392433,
       "is_valid": true,
-      "last_downloaded": "2026-05-13T16:30:36"
+      "last_downloaded": "2026-05-13T20:13:23"
     },
     "german_law/eu_directive_temporary_protection.txt": {
       "source": "eurlex",
@@ -85,6 +87,83 @@
       "file_size_bytes": 8186,
       "is_valid": true,
       "last_downloaded": "2026-05-13T16:37:46"
+    },
+    "german_law/sgb_v.txt": {
+      "source": "kmein",
+      "github_sha": "96c2476f04e779e1cf3ec4f32fabb66bfa04b9b3",
+      "file_size_bytes": 511739,
+      "is_valid": true,
+      "last_downloaded": "2026-05-13T20:12:39"
+    },
+    "german_law/kuendigungsschutzgesetz.txt": {
+      "source": "kmein",
+      "github_sha": "2ca1cf960fc5f6bfcb420f16136ffc58d0209eb7",
+      "file_size_bytes": 34012,
+      "is_valid": true,
+      "last_downloaded": "2026-05-13T20:12:39"
+    },
+    "german_law/arbeitszeitgesetz.txt": {
+      "source": "kmein",
+      "github_sha": "5fed5c2676ebc80311f42532cb512870c3825fa8",
+      "file_size_bytes": 39053,
+      "is_valid": true,
+      "last_downloaded": "2026-05-13T20:12:39"
+    },
+    "german_law/bundesurlaubsgesetz.txt": {
+      "source": "kmein",
+      "github_sha": "d39df4e7e90e470850e4c861fd98108c0898f644",
+      "file_size_bytes": 11459,
+      "is_valid": true,
+      "last_downloaded": "2026-05-13T20:12:39"
+    },
+    "german_law/sgb_iii.txt": {
+      "source": "kmein",
+      "github_sha": "82f5e0603515d7640cc73fe958b7d4ef57b3b6cf",
+      "file_size_bytes": 511433,
+      "is_valid": true,
+      "last_downloaded": "2026-05-13T20:12:40"
+    },
+    "german_law/bqfg.txt": {
+      "source": "kmein",
+      "github_sha": "5b5d5c0bbaf584527ff97c5d7018ecca6f7e099e",
+      "file_size_bytes": 31182,
+      "is_valid": true,
+      "last_downloaded": "2026-05-13T20:12:40"
+    },
+    "german_law/wohngeldgesetz.txt": {
+      "source": "kmein",
+      "github_sha": "a4df6dea4548d8f3e9b5eda7a4fde601e24bbcd0",
+      "file_size_bytes": 143142,
+      "is_valid": true,
+      "last_downloaded": "2026-05-13T20:12:41"
+    },
+    "german_law/bkgg.txt": {
+      "source": "kmein",
+      "github_sha": "8e4888589bfb5d27264b775c621ec46650191473",
+      "file_size_bytes": 46687,
+      "is_valid": true,
+      "last_downloaded": "2026-05-13T20:12:41"
+    },
+    "german_law/mindestlohngesetz.txt": {
+      "source": "kmein",
+      "github_sha": "3aa05c202e9ac81ea833616388d9e59e0142d36c",
+      "file_size_bytes": 35858,
+      "is_valid": true,
+      "last_downloaded": "2026-05-13T20:12:41"
+    },
+    "german_law/agg.txt": {
+      "source": "kmein",
+      "github_sha": "b321faafad4377dd85dcfd36d5a05b26eca6c8d1",
+      "file_size_bytes": 45403,
+      "is_valid": true,
+      "last_downloaded": "2026-05-13T20:12:42"
+    },
+    "ukrainian_context/ua_idp_law.txt": {
+      "source": "rada",
+      "last_modified_header": "Wed, 15 Apr 2026 13:50:05 GMT",
+      "file_size_bytes": 156541,
+      "is_valid": true,
+      "last_downloaded": "2026-05-13T20:13:31"
     }
   },
   "rada_token": {
@@ -92,5 +171,5 @@
     "obtained_at": "2026-05-13T16:29:53",
     "valid_until": "2026-05-13T23:59:59"
   },
-  "last_full_collection": "2026-05-13T16:30:36"
+  "last_full_collection": "2026-05-13T20:13:31"
 }

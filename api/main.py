@@ -4,12 +4,15 @@ from __future__ import annotations
 import asyncio
 import logging
 import os
+from contextlib import asynccontextmanager
 from pathlib import Path
 
 from dotenv import load_dotenv
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
+
+from api.middleware import RateLimitMiddleware, SecurityHeadersMiddleware
 
 # Завантаження .env
 load_dotenv(Path(__file__).parent.parent / ".env")
@@ -23,8 +26,37 @@ logger = logging.getLogger(__name__)
 from api.routes.query import router as query_router
 from api.routes.profile import router as profile_router
 from api.routes.health import router as health_router
+from api.auth.router import router as auth_router
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """Lifespan: startup (перед yield) → shutdown (після yield).
+
+    Індексація запускається у фоні — сервер стартує одразу і приймає
+    healthcheck. Під час індексації /query повертає 503 через порожні колекції,
+    але /health відповідає 200.
+    """
+    loop = asyncio.get_running_loop()
+
+    async def _background_reindex():
+        await loop.run_in_executor(None, _smart_reindex)
+
+    # Фонова індексація — НЕ блокуємо старт сервера
+    _index_task  = asyncio.create_task(_background_reindex())
+    _update_task = asyncio.create_task(_daily_update_loop())
+    yield
+    # Graceful shutdown
+    _update_task.cancel()
+    _index_task.cancel()
+    try:
+        await asyncio.gather(_update_task, _index_task, return_exceptions=True)
+    except asyncio.CancelledError:
+        pass
+
 
 app = FastAPI(
+    lifespan=lifespan,
     title="Система правової підтримки для українців у Німеччині",
     description=(
         "RAG-система, що надає персоналізовані відповіді на правові запити "
@@ -36,14 +68,30 @@ app = FastAPI(
     redoc_url="/redoc",
 )
 
+# ── CORS: дозволяємо тільки конкретні origins ────────────────────────────────
+# У продакшні замініть на реальний домен. "*" залишаємо лише для localhost-dev.
+_ALLOWED_ORIGINS = os.getenv(
+    "ALLOWED_ORIGINS",
+    "http://localhost:8000,http://localhost:5500,http://127.0.0.1:8000",
+).split(",")
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_origins=_ALLOWED_ORIGINS,
+    allow_credentials=False,          # credentials не потрібні — немає сесій
+    allow_methods=["GET", "POST"],    # тільки потрібні методи
+    allow_headers=["Content-Type", "Authorization"],
 )
 
+# ── Security middleware (порядок важливий: перший = зовнішній шар) ────────────
+app.add_middleware(SecurityHeadersMiddleware)
+app.add_middleware(
+    RateLimitMiddleware,
+    per_ip_rpm=int(os.getenv("RATE_LIMIT_PER_IP_RPM",  "15")),
+    global_rpm=int(os.getenv("RATE_LIMIT_GLOBAL_RPM", "200")),
+)
+
+app.include_router(auth_router)
 app.include_router(query_router, tags=["Запити"])
 app.include_router(profile_router, tags=["Профіль"])
 app.include_router(health_router, tags=["Система"])
@@ -64,15 +112,7 @@ async def root():
     }
 
 
-# ─── Startup: розумний re-index ──────────────────────────────────────────────
-
-@app.on_event("startup")
-async def startup_event() -> None:
-    """При старті API: перевіряє зміни у data/ та переіндексує лише змінені файли."""
-    loop = asyncio.get_event_loop()
-    await loop.run_in_executor(None, _smart_reindex)
-    # Запуск фонового щоденного оновлення
-    asyncio.create_task(_daily_update_loop())
+# ─── Startup логіка (викликається з lifespan) ────────────────────────────────
 
 
 def _smart_reindex() -> None:
@@ -142,7 +182,7 @@ async def _daily_update_loop() -> None:
         await asyncio.sleep(_DAILY_UPDATE_INTERVAL)
         logger.info("Фонове оновлення даних: запуск (інтервал %dh)...",
                     _DAILY_UPDATE_INTERVAL // 3600)
-        loop = asyncio.get_event_loop()
+        loop = asyncio.get_running_loop()
         try:
             updated = await loop.run_in_executor(None, _run_data_update)
             if updated:
@@ -195,7 +235,7 @@ def _run_data_update() -> bool:
 
             result = validate(text, source_kind=doc.kind.value)
             if not result:
-                logger.warning("Валідація %s: %s", doc.output_path, result.reason)
+                logger.warning("Валідація %s: %s", doc.output_path, result.reason or "невідома причина")
                 continue
 
             output_file.write_text(text, encoding="utf-8")

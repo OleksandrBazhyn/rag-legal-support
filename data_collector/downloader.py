@@ -47,8 +47,8 @@ def _http_get(url: str, headers: dict[str, str] | None = None) -> tuple[bytes, d
                 resp_headers = {k.lower(): v for k, v in resp.headers.items()}
                 return body, resp_headers
         except HTTPError as exc:
-            if exc.code in (401, 403, 404):
-                raise  # не повторювати при помилках автентифікації або відсутності
+            if exc.code in (304, 401, 403, 404):
+                raise  # не повторювати: 304=not modified, 4xx=auth/not found
             last_exc = exc
             logger.warning("HTTP %d для %s", exc.code, url)
         except URLError as exc:
@@ -219,34 +219,12 @@ def fetch_eurlex(
 
 
 # ─── data.rada.gov.ua ────────────────────────────────────────────────────────
-
-def _get_rada_token(state: StateManager) -> str:
-    """Повертає дійсний токен Ради (запитує новий якщо протермінований)."""
-    import json
-
-    token = state.get_rada_token()
-    if token:
-        return token
-
-    logger.info("Отримання токена data.rada.gov.ua (один раз на добу)…")
-    try:
-        body, _ = _http_get(
-            f"{RADA_API_BASE}/api/token",
-            {"User-Agent": "rag-legal-support/1.0", "Accept": "application/json"},
-        )
-        data = json.loads(body)
-        token = data.get("token", "")
-        expire = int(data.get("expire", 86400))
-        if not token:
-            raise ValueError("Порожній токен у відповіді Ради")
-        state.save_rada_token(token, expire)
-        # Warmup-пауза: Рада потребує часу після видачі токена
-        warmup = random.uniform(8, 12)
-        logger.info("Токен Ради отримано. Warmup-пауза %.1fs…", warmup)
-        time.sleep(warmup)
-        return token
-    except Exception as exc:
-        raise RuntimeError(f"Не вдалося отримати токен Ради: {exc}") from exc
+#
+# За документацією API:
+#   - TXT формат: User-Agent: OpenData  (токен НЕ потрібен)
+#   - JSON формат: User-Agent: <uuid-токен> (потребує реєстрації IP)
+#   - ЗАБОРОНЕНО: звертатись до /api/token перед кожним запитом
+#   Джерело: https://data.rada.gov.ua → розділ API
 
 
 def fetch_rada(
@@ -255,23 +233,18 @@ def fetch_rada(
     state: StateManager,
     force: bool = False,
 ) -> tuple[Optional[bytes], str]:
-    """Завантажує документ із data.rada.gov.ua.
+    """Завантажує текст документа з data.rada.gov.ua у форматі TXT.
 
-    ВАЖЛИВО: Між запитами — пауза random.uniform(5, 7) секунд.
-    Токен передається як User-Agent.
+    Використовує User-Agent: OpenData (без токена) — офіційний спосіб
+    доступу до TXT-формату згідно з документацією Ради.
+    Між запитами — обов'язкова пауза 5-7 секунд.
 
     Returns:
-        (text_bytes, status)
+        (text_bytes, status): status = 'downloaded' | 'cached' | 'not_found' | 'error'
     """
-    try:
-        token = _get_rada_token(state)
-    except RuntimeError as exc:
-        logger.error("Рада: %s", exc)
-        return None, "error"
-
     url = f"{RADA_API_BASE}/laws/show/{nreg}.txt"
     headers: dict[str, str] = {
-        "User-Agent": token,
+        "User-Agent": "OpenData",
         "Accept": "text/plain, */*",
     }
 
@@ -280,7 +253,7 @@ def fetch_rada(
         if last_mod:
             headers["If-Modified-Since"] = last_mod
 
-    # Обов'язкова пауза між запитами
+    # Обов'язкова пауза між запитами (до 60 запитів/хвилину)
     delay = random.uniform(*_RADA_DELAY)
     logger.debug("Рада: пауза %.1fs перед запитом %s", delay, nreg)
     time.sleep(delay)
@@ -292,14 +265,6 @@ def fetch_rada(
             if exc.code == 304:
                 logger.info("⏩ Рада Not Modified: %s (%s)", output_path, nreg)
                 return None, "cached"
-            if exc.code in (401, 403):
-                logger.error(
-                    "Рада: токен відхилено або протермінований (HTTP %d).\n"
-                    "Видали 'rada_token' з data/.collection_state.json і запусти знову.",
-                    exc.code,
-                )
-                state.clear_rada_token()
-                return None, "error"
             if exc.code == 404:
                 logger.warning("Рада: nreg %s не знайдено (404)", nreg)
                 return None, "not_found"
@@ -309,22 +274,22 @@ def fetch_rada(
             logger.error("Рада: мережева помилка для %s: %s", nreg, exc)
             return None, "error"
 
-        # Перевіряємо: якщо відповідь підозріло мала (< 2000 байт) — може бути redirect
-        # Повторюємо з більшою паузою
-        if len(body) < 2000:
-            sniff = body[:200].decode("utf-8", "replace").lower()
-            has_html = "<html" in sniff or "<!doctype" in sniff or "redirect" in sniff
-            if has_html or attempt < _MAX_RETRIES - 1:
-                extra = _BACKOFF[attempt]
-                logger.warning(
-                    "Рада: підозріло мала відповідь %d байт для %s (спроба %d). "
-                    "Пауза %ds…",
-                    len(body), nreg, attempt + 1, extra,
-                )
-                time.sleep(extra)
-                continue
+        # Якщо відповідь — HTML-сторінка (редирект або помилка) — повторити
+        sniff = body[:200].decode("utf-8", "replace").lower()
+        is_html = "<html" in sniff or "<!doctype" in sniff or "redirect" in sniff
+        if is_html and attempt < _MAX_RETRIES - 1:
+            extra = _BACKOFF[attempt]
+            logger.warning(
+                "Рада: HTML-відповідь %d байт для %s (спроба %d). Пауза %ds…",
+                len(body), nreg, attempt + 1, extra,
+            )
+            time.sleep(extra)
+            continue
+        if is_html:
+            logger.error("Рада: сервер повертає HTML після %d спроб для %s", _MAX_RETRIES, nreg)
+            return None, "error"
 
-        break  # відповідь нормальна
+        break  # відповідь нормальна (plain text)
     else:
         logger.error("Рада: усі %d спроб вичерпано для %s", _MAX_RETRIES, nreg)
         return None, "error"

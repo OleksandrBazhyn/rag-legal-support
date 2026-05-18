@@ -2,17 +2,32 @@ services:
 
   # ── ChromaDB ─────────────────────────────────────────────────────────────────
   chromadb:
-    image: chromadb/chroma:latest
+    image: chromadb/chroma:0.6.3
     container_name: rag-chromadb
     ports:
-      - "8001:8000"
+      - "8001:8000"          # host:8001 → container:8000
     volumes:
-      - ./chroma_db:/chroma/chroma
+      - chroma_data:/chroma/chroma
     environment:
       - ANONYMIZED_TELEMETRY=false
       - IS_PERSISTENT=true
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    deploy:
+      resources:
+        limits:
+          memory: 512m
+          cpus: "1.0"
+    healthcheck:
+      # bash /dev/tcp — вбудований TCP-коннект, не потребує curl/wget/python
+      test: ["CMD", "bash", "-c", "exec 3<>/dev/tcp/localhost/8000"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
 
-  # ── Indexer (Data Ingestion) ─────────────────────────────────────────────────
+  # ── Indexer (одноразова ініціалізація) ────────────────────────────────────────
   indexer:
     build:
       context: .
@@ -21,15 +36,21 @@ services:
     container_name: rag-indexer
     volumes:
       - ./data:/app/data
-      - ./chroma_db:/app/chroma_db
     environment:
       - CHROMA_HOST=chromadb
-      - CHROMA_PORT=8000
+      - CHROMA_PORT=8000              # внутрішній порт chromadb
       - EMBEDDING_MODEL=${EMBEDDING_MODEL:-paraphrase-multilingual-mpnet-base-v2}
     depends_on:
       chromadb:
-        condition: service_started
+        condition: service_healthy    # чекаємо поки ChromaDB готовий
     command: python -m ingestion.indexer
+    security_opt:
+      - no-new-privileges:true
+    deploy:
+      resources:
+        limits:
+          memory: 2g               # потрібно для завантаження embedding-моделі
+          cpus: "2.0"
     profiles:
       - init
 
@@ -43,24 +64,37 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - ./data:/app/data
-      - ./chroma_db:/app/chroma_db
+      - ./data:/app/data              # тексти законів + SQLite
     environment:
       - OPENAI_API_KEY=${OPENAI_API_KEY}
       - CHROMA_HOST=chromadb
-      - CHROMA_PORT=8000
+      - CHROMA_PORT=8000              # внутрішній порт chromadb (НЕ 8001!)
       - EMBEDDING_MODEL=${EMBEDDING_MODEL:-paraphrase-multilingual-mpnet-base-v2}
       - LLM_MODEL=${LLM_MODEL:-gpt-4o-mini}
+      - DATA_UPDATE_INTERVAL_HOURS=${DATA_UPDATE_INTERVAL_HOURS:-24}
+      - ALLOWED_ORIGINS=${ALLOWED_ORIGINS:-http://localhost:8000,http://localhost:5500}
+      - RATE_LIMIT_PER_IP_RPM=${RATE_LIMIT_PER_IP_RPM:-15}
+      - RATE_LIMIT_GLOBAL_RPM=${RATE_LIMIT_GLOBAL_RPM:-200}
+      - CHROMA_PERSIST_DIR=/app/data    # index_state.json зберігається в bind-mount (./data)
     depends_on:
       chromadb:
-        condition: service_started
+        condition: service_healthy
     restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL                           # скидаємо всі Linux capabilities
+    deploy:
+      resources:
+        limits:
+          memory: 2g                  # embedding-модель займає ~500 МБ
+          cpus: "2.0"
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      test: ["CMD", "curl", "-sf", "http://localhost:8000/health"]
       interval: 15s
       timeout: 10s
-      retries: 3
-      start_period: 30s
+      retries: 5
+      start_period: 30s               # сервер стартує одразу, індексація у фоні
 
   # ── Telegram Bot ─────────────────────────────────────────────────────────────
   bot:
@@ -69,14 +103,26 @@ services:
       dockerfile: Dockerfile
       target: bot
     container_name: rag-bot
+    volumes:
+      - ./data:/app/data              # SQLite users.db — персистентний між рестартами
     environment:
       - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
-      - API_BASE_URL=http://api:8000
+      - API_BASE_URL=http://api:8000  # внутрішній Docker-адрес API
       - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - LLM_MODEL=${LLM_MODEL:-gpt-4o-mini}
     depends_on:
       api:
-        condition: service_started
+        condition: service_healthy    # запускаємо бота тільки коли API готовий
     restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    deploy:
+      resources:
+        limits:
+          memory: 512m
+          cpus: "0.5"
 
 volumes:
-  chroma_db:
+  chroma_data:                        # named volume для ChromaDB (не bind-mount)

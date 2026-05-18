@@ -39,11 +39,11 @@ def add_comparison(base_prompt: str, ukrainian_chunks: list[dict]) -> str:
     return base_prompt + "\n".join(comparison_parts)
 
 
-def has_relevant_comparison(ukrainian_chunks: list[dict], distance_threshold: float = 0.6) -> bool:
+def has_relevant_comparison(ukrainian_chunks: list[dict], distance_threshold: float = 0.42) -> bool:
     """Перевіряє, чи є серед Ukrainian-чанків достатньо релевантні (за відстанню cosine).
 
     ChromaDB повертає cosine distance (0 = ідентично, 1 = нічого спільного).
-    Поріг 0.6 відповідає помірній релевантності.
+    Поріг 0.42 — висока релевантність: уникаємо хибних спрацювань на загальні запити.
     """
     return any(
         chunk.get("distance", 1.0) < distance_threshold

@@ -1,0 +1,262 @@
+[
+  {
+    "id": "bg_01",
+    "topic": "Bürgergeld",
+    "question": "Який розмір виплат Bürgergeld для одинокої особи у 2024 році?",
+    "profile": {
+      "legal_status": "temporary_protection",
+      "region": "Berlin",
+      "query_category": "social_benefits",
+      "language": "uk"
+    },
+    "expected_keywords": ["563", "Bürgergeld", "SGB II", "Regelbedarfsstufe"],
+    "expected_sources_contain": ["sgb", "buergergeld", "sozial"]
+  },
+  {
+    "id": "bg_02",
+    "topic": "Bürgergeld",
+    "question": "Які документи потрібні для оформлення Bürgergeld?",
+    "profile": {
+      "legal_status": "temporary_protection",
+      "region": "NRW",
+      "query_category": "social_benefits",
+      "language": "uk"
+    },
+    "expected_keywords": ["Jobcenter", "Antrag", "Ausweis", "Aufenthaltstitel", "Kontoauszug"],
+    "expected_sources_contain": ["sgb", "buergergeld", "sozial"]
+  },
+  {
+    "id": "bg_03",
+    "topic": "Bürgergeld",
+    "question": "Чи можу я отримувати Bürgergeld, якщо маю тимчасовий захист §24?",
+    "profile": {
+      "legal_status": "temporary_protection",
+      "region": "Bayern",
+      "query_category": "social_benefits",
+      "language": "uk"
+    },
+    "expected_keywords": ["§24", "тимчасовий захист", "Aufenthaltsgestattung", "Jobcenter"],
+    "expected_sources_contain": ["sgb", "aufenthalt", "asyl"]
+  },
+  {
+    "id": "bg_04",
+    "topic": "Bürgergeld",
+    "question": "Як розраховується допомога на житло в рамках SGB II?",
+    "profile": {
+      "legal_status": "temporary_protection",
+      "region": "Hamburg",
+      "query_category": "social_benefits",
+      "language": "uk"
+    },
+    "expected_keywords": ["Kosten der Unterkunft", "KdU", "Miete", "Heizkosten"],
+    "expected_sources_contain": ["sgb", "unterkunft", "wohn"]
+  },
+  {
+    "id": "res_01",
+    "topic": "Aufenthaltstitel",
+    "question": "Що таке Aufenthaltserlaubnis §24 і хто має на нього право?",
+    "profile": {
+      "legal_status": "temporary_protection",
+      "region": "Berlin",
+      "query_category": "residence",
+      "language": "uk"
+    },
+    "expected_keywords": ["§24", "AufenthG", "Massenzustrom", "Ukraina", "Aufenthaltserlaubnis"],
+    "expected_sources_contain": ["aufenthalt", "aufenthg"]
+  },
+  {
+    "id": "res_02",
+    "topic": "Aufenthaltstitel",
+    "question": "Як продовжити дозвіл на проживання §24 після закінчення терміну?",
+    "profile": {
+      "legal_status": "temporary_protection",
+      "region": "NRW",
+      "query_category": "residence",
+      "language": "uk"
+    },
+    "expected_keywords": ["Verlängerung", "Ausländerbehörde", "Antrag", "Termin"],
+    "expected_sources_contain": ["aufenthalt", "aufenthg"]
+  },
+  {
+    "id": "res_03",
+    "topic": "Aufenthaltstitel",
+    "question": "Яка різниця між тимчасовим захистом і статусом біженця в Німеччині?",
+    "profile": {
+      "legal_status": "asylum_seeker",
+      "region": "Bayern",
+      "query_category": "residence",
+      "language": "uk"
+    },
+    "expected_keywords": ["§24", "§3", "AsylG", "Genfer", "Flüchtlingsstatus", "subsidiär"],
+    "expected_sources_contain": ["asyl", "aufenthalt", "fluechtling"]
+  },
+  {
+    "id": "res_04",
+    "topic": "Aufenthaltstitel",
+    "question": "Чи може власник §24 подати заяву на постійне місце проживання (Niederlassungserlaubnis)?",
+    "profile": {
+      "legal_status": "temporary_protection",
+      "region": "Berlin",
+      "query_category": "residence",
+      "language": "uk"
+    },
+    "expected_keywords": ["Niederlassungserlaubnis", "§26", "AufenthG", "5 Jahre"],
+    "expected_sources_contain": ["aufenthalt", "aufenthg"]
+  },
+  {
+    "id": "emp_01",
+    "topic": "Працевлаштування",
+    "question": "Чи можу я працювати в Німеччині з дозволом §24?",
+    "profile": {
+      "legal_status": "temporary_protection",
+      "region": "NRW",
+      "query_category": "employment",
+      "language": "uk"
+    },
+    "expected_keywords": ["Arbeitserlaubnis", "Arbeitsgenehmigung", "§24", "erlaubt", "berechtigt"],
+    "expected_sources_contain": ["aufenthalt", "arbeit", "beschaeftigung"]
+  },
+  {
+    "id": "emp_02",
+    "topic": "Працевлаштування",
+    "question": "Яка мінімальна зарплата в Німеччині у 2024 році?",
+    "profile": {
+      "legal_status": "temporary_protection",
+      "region": "Bayern",
+      "query_category": "employment",
+      "language": "uk"
+    },
+    "expected_keywords": ["Mindestlohn", "12,41", "MiLoG", "Euro"],
+    "expected_sources_contain": ["mindestlohn", "milog", "arbeit"]
+  },
+  {
+    "id": "emp_03",
+    "topic": "Працевлаштування",
+    "question": "Що таке Kurzarbeitergeld і чи можу я на нього претендувати?",
+    "profile": {
+      "legal_status": "temporary_protection",
+      "region": "Hamburg",
+      "query_category": "employment",
+      "language": "uk"
+    },
+    "expected_keywords": ["Kurzarbeitergeld", "SGB III", "Arbeitsagentur", "60%", "67%"],
+    "expected_sources_contain": ["sgb", "arbeit", "kurzarbeit"]
+  },
+  {
+    "id": "hlth_01",
+    "topic": "Медицина",
+    "question": "Як оформити медичне страхування (GKV) в Німеччині?",
+    "profile": {
+      "legal_status": "temporary_protection",
+      "region": "Berlin",
+      "query_category": "healthcare",
+      "language": "uk"
+    },
+    "expected_keywords": ["GKV", "Krankenversicherung", "AOK", "TK", "Barmer", "Beitrag"],
+    "expected_sources_contain": ["kranken", "sgb", "gesundheit"]
+  },
+  {
+    "id": "hlth_02",
+    "topic": "Медицина",
+    "question": "Які медичні послуги покриває GKV для власника §24?",
+    "profile": {
+      "legal_status": "temporary_protection",
+      "region": "Bayern",
+      "query_category": "healthcare",
+      "language": "uk"
+    },
+    "expected_keywords": ["Leistungen", "Arzt", "Krankenhaus", "Medikamente", "Zuzahlung"],
+    "expected_sources_contain": ["kranken", "sgb", "leistung"]
+  },
+  {
+    "id": "hlth_03",
+    "topic": "Медицина",
+    "question": "Чи покривається стоматологія медичним страхуванням GKV?",
+    "profile": {
+      "legal_status": "temporary_protection",
+      "region": "NRW",
+      "query_category": "healthcare",
+      "language": "uk"
+    },
+    "expected_keywords": ["Zahnbehandlung", "Zahnarzt", "Bonus", "festsetzungsfähig", "GKV"],
+    "expected_sources_contain": ["kranken", "zahn", "sgb"]
+  },
+  {
+    "id": "edu_01",
+    "topic": "Освіта",
+    "question": "Як записати дитину до школи в Німеччині?",
+    "profile": {
+      "legal_status": "temporary_protection",
+      "region": "Berlin",
+      "query_category": "education",
+      "language": "uk"
+    },
+    "expected_keywords": ["Schulpflicht", "Anmeldung", "Schule", "Willkommensklasse", "DaZ"],
+    "expected_sources_contain": ["schul", "bildung", "kind"]
+  },
+  {
+    "id": "edu_02",
+    "topic": "Освіта",
+    "question": "Чи доступна безкоштовна мовна підготовка (Integrationskurs) для власника §24?",
+    "profile": {
+      "legal_status": "temporary_protection",
+      "region": "Bayern",
+      "query_category": "education",
+      "language": "uk"
+    },
+    "expected_keywords": ["Integrationskurs", "BAMF", "kostenlos", "Sprachkurs", "berechtigt"],
+    "expected_sources_contain": ["integration", "bamf", "sprach"]
+  },
+  {
+    "id": "edu_03",
+    "topic": "Освіта",
+    "question": "Як визнати українській диплом або кваліфікацію в Німеччині?",
+    "profile": {
+      "legal_status": "temporary_protection",
+      "region": "NRW",
+      "query_category": "education",
+      "language": "uk"
+    },
+    "expected_keywords": ["Anerkennung", "Berufsabschluss", "anabin", "KMK", "IHK", "Bewerbung"],
+    "expected_sources_contain": ["anerkennung", "qualifikation", "bildung"]
+  },
+  {
+    "id": "wohn_01",
+    "topic": "Wohngeld",
+    "question": "Що таке Wohngeld і хто може його отримати?",
+    "profile": {
+      "legal_status": "temporary_protection",
+      "region": "Berlin",
+      "query_category": "social_benefits",
+      "language": "uk"
+    },
+    "expected_keywords": ["Wohngeld", "Mietzuschuss", "Wohngeldbehörde", "Antrag"],
+    "expected_sources_contain": ["wohn", "wohngelg"]
+  },
+  {
+    "id": "wohn_02",
+    "topic": "Wohngeld",
+    "question": "Чи можна отримувати Wohngeld та Bürgergeld одночасно?",
+    "profile": {
+      "legal_status": "temporary_protection",
+      "region": "Hamburg",
+      "query_category": "social_benefits",
+      "language": "uk"
+    },
+    "expected_keywords": ["Wohngeld", "SGB II", "Ausschluss", "gleichzeitig", "Bürgergeld"],
+    "expected_sources_contain": ["wohn", "sgb"]
+  },
+  {
+    "id": "gen_01",
+    "topic": "Загальне",
+    "question": "Що таке Anmeldung і як його зробити в Німеччині?",
+    "profile": {
+      "legal_status": "temporary_protection",
+      "region": "Bayern",
+      "query_category": "other",
+      "language": "uk"
+    },
+    "expected_keywords": ["Anmeldung", "Einwohnermeldeamt", "Bürgeramt", "Wohnsitz", "Meldebestätigung"],
+    "expected_sources_contain": ["meld", "anmeld", "einwohner"]
+  }
+]

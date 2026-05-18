@@ -93,6 +93,66 @@ DOCUMENTS: list[LegalDocument] = [
         description="SGB XII — Sozialhilfe",
         law_matcher=_regex(r"SGB_12-BJNR\d+"),
     ),
+    LegalDocument(
+        kind=SourceKind.KMEIN,
+        output_path="german_law/sgb_v.txt",
+        description="SGB V — Gesetzliche Krankenversicherung (медичне страхування)",
+        law_matcher=_regex(r"SGB_5-BJNR\d+"),
+    ),
+    LegalDocument(
+        kind=SourceKind.KMEIN,
+        output_path="german_law/kuendigungsschutzgesetz.txt",
+        description="Kündigungsschutzgesetz (KSchG) — захист від звільнення",
+        law_matcher=_prefix("KSchG"),
+    ),
+    LegalDocument(
+        kind=SourceKind.KMEIN,
+        output_path="german_law/arbeitszeitgesetz.txt",
+        description="Arbeitszeitgesetz (ArbZG) — закон про робочий час",
+        law_matcher=_prefix("ArbZG"),
+    ),
+    LegalDocument(
+        kind=SourceKind.KMEIN,
+        output_path="german_law/bundesurlaubsgesetz.txt",
+        description="Bundesurlaubsgesetz (BUrlG) — федеральний закон про відпустки",
+        law_matcher=_prefix("BUrlG"),
+    ),
+    LegalDocument(
+        kind=SourceKind.KMEIN,
+        output_path="german_law/sgb_iii.txt",
+        description="SGB III — Arbeitsförderung (допомога по безробіттю, пошук роботи)",
+        law_matcher=_regex(r"SGB_3-BJNR\d+"),
+    ),
+    LegalDocument(
+        kind=SourceKind.KMEIN,
+        output_path="german_law/bqfg.txt",
+        description="BQFG — Berufsqualifikationsfeststellungsgesetz (визнання іноземних кваліфікацій)",
+        law_matcher=_prefix("BQFG"),
+    ),
+    LegalDocument(
+        kind=SourceKind.KMEIN,
+        output_path="german_law/wohngeldgesetz.txt",
+        description="WoGG — Wohngeldgesetz (субсидія на житло)",
+        law_matcher=_prefix("WoGG"),
+    ),
+    LegalDocument(
+        kind=SourceKind.KMEIN,
+        output_path="german_law/bkgg.txt",
+        description="BKGG — Bundeskindergeldgesetz (дитяча допомога)",
+        law_matcher=_prefix("BKGG"),
+    ),
+    LegalDocument(
+        kind=SourceKind.KMEIN,
+        output_path="german_law/mindestlohngesetz.txt",
+        description="MiLoG — Mindestlohngesetz (мінімальна заробітна плата)",
+        law_matcher=_prefix("MiLoG"),
+    ),
+    LegalDocument(
+        kind=SourceKind.KMEIN,
+        output_path="german_law/agg.txt",
+        description="AGG — Allgemeines Gleichbehandlungsgesetz (захист від дискримінації)",
+        law_matcher=_prefix("AGG"),
+    ),
 
     # ── EUR-Lex: EU Directives ────────────────────────────────────────────────
 
@@ -136,6 +196,12 @@ DOCUMENTS: list[LegalDocument] = [
         output_path="ukrainian_context/ua_social_services.txt",
         description="Закон України про соціальні послуги (2811-20)",
         rada_nreg="2811-20",
+    ),
+    LegalDocument(
+        kind=SourceKind.RADA,
+        output_path="ukrainian_context/ua_idp_law.txt",
+        description="Закон України про забезпечення прав і свобод внутрішньо переміщених осіб (1706-18)",
+        rada_nreg="1706-18",
     ),
 ]
 

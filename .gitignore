@@ -4,6 +4,8 @@ __pycache__/
 *.pyo
 *.pyd
 *.sqlite3
+*.db
+data/users.db
 *.log
 .pytest_cache/
 .env.docker

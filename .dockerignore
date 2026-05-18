@@ -1,0 +1,60 @@
+# Version control
+.git
+.gitignore
+.gitattributes
+
+# Python cache
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info
+dist/
+build/
+.eggs/
+
+# Virtual environments
+.venv
+venv
+env
+
+# Tests & evaluation results (not needed in production image)
+tests/
+evaluation/results.csv
+evaluation/baseline_results.csv
+evaluation/report.md
+evaluation/baseline_report.md
+evaluation/comparison_report.md
+
+# Secrets & local config
+.env
+.env.*
+!.env.example
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+
+# Docker files themselves (not needed inside image)
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Docs
+README.md
+CHANGELOG.md
+
+# Logs
+*.log
+logs/
+
+# SQLite databases (mounted as volume at runtime)
+data/users.db
+data/*.db

@@ -1,0 +1,33 @@
+{
+  "last_indexed": "2026-05-18T18:32:37",
+  "indexed_files": {
+    "agg.txt": "0dbd22b0ded034a87632c65cfe98c72416ecd5a4e6341528cc19cf5e454c4d13",
+    "arbeitszeitgesetz.txt": "01fc43005ddaf4fb3695af2e3309f86b176549fa883c64c8a16d61d37cfb9364",
+    "asylbewerberleistungsgesetz.txt": "c06610ef0fb5f964d513194ec31767b71c90be5c30f0821f503dbb38ac95420c",
+    "asylgesetz.txt": "e584f748fdc85f273d9c4d17a7cc43d1414bebd26a553c4ae08c23860a3ad68a",
+    "aufenthaltsgesetz.txt": "c5c1cb2061648f0c75bfd2021e6cbd2e65625e4511b60ec49a9d0c12dd98cdad",
+    "bamf_instructions.txt": "3cec3c9fe5b7d69055a7b0ffee81ec4a2d1f22060351a2eb9323ef7f49e7d32f",
+    "beschaeftigungsverordnung.txt": "45805a91995fa6a614ceffcaa93cb3ec335080fcf18339cd5b65a91ac4831dcc",
+    "bkgg.txt": "ed2c0087fc5e40e0144c7a4ef2ca536d1c3cc691dd9d65bce29df9ec65b58d2d",
+    "bqfg.txt": "a6377b5812f22ffe1af9893e3f2dcc4f149dfc9c1ae452ee71fc935ab05f6ef9",
+    "bundesurlaubsgesetz.txt": "1edabbe42a58c7a90753452b33f50ab46b402dbc7d5029307bb77e24b3b8c0a2",
+    "eu_directive_reception_conditions.txt": "a8d303dea09b948bc47cb4d7c19b23d3d507579945c61bf607c4b3a700c81215",
+    "eu_directive_temporary_protection.txt": "51233935b4617eacd9e1ccd3aabad8d072bda0c3507a2964ccd551bb2918f09f",
+    "kuendigungsschutzgesetz.txt": "9feb12cb80b6eae118a5cf4f6e4f74ebb9e52dbd9910227320614df10e8a2b5a",
+    "mindestlohngesetz.txt": "4bc512ecf45b6d9e9476baff2d37346b4cbc8cd52d41829ae7389cea578f3c5e",
+    "schulpflicht.txt": "23f0b46998f275f900a31049a2ddc02bacf396658433d0a85e958858264d7bbf",
+    "sgb_ii.txt": "069280490ad7581989e70fbbd41bbf82a6a0be7ec63ac1e030fc8312cb754bdf",
+    "sgb_iii.txt": "d5deb3687489c541574ca80759bd42f3d759b54098700a914ff15d0e94f4e81e",
+    "sgb_v.txt": "e2a449420aa17adcd1d4378bbbe33731977371ca751f351670b77d7b700fee69",
+    "sgb_xii.txt": "a8617acbb8ee32a80ef96de964ec9a8cf1f3ea694ff3a4cbbed009db712e58fc",
+    "wohngeldgesetz.txt": "da09f23121622abe9819eb13fdfe9f6be46a3a9669af6b30f832e7612146ecb9",
+    "employment_comparison.txt": "479c050a8d4f585f506162906ddae73b35aaf105676e6af640ad44ddafdb5f95",
+    "residence_comparison.txt": "24c0675574ba95c15022e7e53709ed7bf4007cbcc7edae08e314d3073d24e045",
+    "social_benefits_comparison.txt": "9695eb5bad0e35cb60dfb732f697633b94b04660214ffac40d7ed50476352537",
+    "ua_employment_law.txt": "3d53129141e8e382f6df5651b1e260c3108a8457788f6cdbad86dc834c211b16",
+    "ua_idp_law.txt": "2495af8f4036a85d06c1306d33d489931b15333cd17a956b7c872ecc7ec4e9e4",
+    "ua_labor_code.txt": "e977cab7aba27bf19bb9a2124c1ab9cd5d3d2a808f27e674a86ff017758c527d",
+    "ua_law_refugees.txt": "c12318f90a7b7e5d3b4272e82fff640ea084c0663889ea87a292fca49cef8e65",
+    "ua_social_services.txt": "7bb1215b0bde94302fdd9d65218055de4f038958c884a895efda5c190d2ea102"
+  }
+}

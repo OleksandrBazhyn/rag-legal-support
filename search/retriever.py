@@ -27,8 +27,25 @@ def _get_model() -> SentenceTransformer:
     return SentenceTransformer(EMBEDDING_MODEL)
 
 
-@lru_cache(maxsize=1)
+_chroma_client: chromadb.ClientAPI | None = None
+
+
 def _get_client() -> chromadb.ClientAPI:
+    """Повертає клієнт ChromaDB з підтримкою reconnect після перезапуску сервера.
+
+    Не кешуємо через @lru_cache — після збою ChromaDB потрібно створити новий клієнт.
+    """
+    global _chroma_client
+    # Перевіряємо чи поточний клієнт живий (heartbeat)
+    if _chroma_client is not None:
+        try:
+            _chroma_client.heartbeat()
+            return _chroma_client
+        except Exception:
+            logger.warning("ChromaDB heartbeat failed — reconnecting…")
+            _chroma_client = None
+
+    # Створюємо новий клієнт
     try:
         client = chromadb.HttpClient(
             host=CHROMA_HOST,
@@ -37,14 +54,16 @@ def _get_client() -> chromadb.ClientAPI:
         )
         client.heartbeat()
         logger.info("Підключено до ChromaDB: %s:%s", CHROMA_HOST, CHROMA_PORT)
+        _chroma_client = client
         return client
     except Exception:
         logger.warning("ChromaDB HTTP недоступний, використовую локальний persistent режим.")
         CHROMA_PERSIST_DIR.mkdir(parents=True, exist_ok=True)
-        return chromadb.PersistentClient(
+        _chroma_client = chromadb.PersistentClient(
             path=str(CHROMA_PERSIST_DIR),
             settings=Settings(anonymized_telemetry=False),
         )
+        return _chroma_client
 
 
 def retrieve(
@@ -78,11 +97,16 @@ def retrieve(
         logger.error("Колекція '%s' не знайдена: %s", collection, exc)
         return []
 
+    count = col.count()
+    if count == 0:
+        logger.debug("Колекція '%s' порожня — повертаємо []", collection)
+        return []
+
     embedding = model.encode([query])[0].tolist()
 
     results = col.query(
         query_embeddings=[embedding],
-        n_results=min(top_k, col.count()),
+        n_results=min(top_k, count),
         include=["documents", "metadatas", "distances"],
     )
 
