@@ -1,0 +1,374 @@
+JUDGMENT OF THE COURT OF JUSTICE (First Chamber)
+
+30 June 2022 (*)
+
+(Reference for a preliminary ruling – Urgent preliminary ruling procedure – Asylum and immigration policy – Directive 2011/95/EU – Article 4 – Common procedures for granting and withdrawing international protection – Directive 2013/32/EU – Articles 6 and 7 – Standards for the reception of applicants for international protection – Article 18 of the Charter of Fundamental Rights of the European Union – Directive 2013/33/EU – Article 8 – Detention of the applicant – Grounds for detention – Protection of national security or public order – Detention of the asylum seeker on grounds of his illegal entry into the territory of the European Union)
+
+In Case C-72/22 PPU,
+
+REQUEST for a preliminary ruling under Article 267 TFEU from the Lietuvos vyriausiasis administracinis teismas (Supreme Administrative Court of Lithuania), made by decision of 2 February 2022, received at the Court on 4 February 2022, in the proceedings
+
+M.A.
+
+interested party:
+
+Valstybės sienos apsaugos tarnyba,
+
+THE COURT (First Chamber),
+
+composed of A. Arabadjiev (Rapporteur), President of the Chamber, L. Bay Larsen, Vice-President of the Court, acting as Judge of the First Chamber, I. Ziemele, P.G. Xuereb and A. Kumin, Judges,
+
+Advocate General: N. Emiliou,
+
+Registrar: M. Siekierzyńska, Administrator,
+
+having regard to the written procedure and further to the hearing on 7 April 2022,
+
+after considering the observations submitted on behalf of:
+
+–        M.A., by I. Botyrienė, advokatė,
+
+–        the Lithuanian Government, by K. Dieninis and V. Vasiliauskienė, acting as Agents,
+
+–        the European Commission, by A. Azema, S.L. Kalėda and A. Steiblytė, acting as Agents,
+
+after hearing the Opinion of the Advocate General at the sitting on 2 June 2022,
+
+gives the following
+
+Judgment
+
+1        This request for a preliminary ruling concerns the interpretation of Article 4(1) of Directive 2011/95/EU of the European Parliament and of the Council of 13 December 2011 on standards for the qualification of third-country nationals or stateless persons as beneficiaries of international protection, for a uniform status for refugees or for persons eligible for subsidiary protection, and for the content of the protection granted (OJ 2011 L 337, p. 9), Article 7(1) of Directive 2013/32/EU of the European Parliament and of the Council of 26 June 2013 on common procedures for granting and withdrawing international protection (OJ 2013 L 180, p. 60) and Article 8(2) and (3) of Directive 2013/33/EU of the European Parliament and of the Council of 26 June 2013 laying down standards for the reception of applicants for international protection (OJ 2013 L 180, p. 96).
+
+2        The request was made in the context of proceedings between M.A., a third-country national, and the Valstybės sienos apsaugos tarnyba (the State Border Guard Service under the Ministry of the Interior of the Republic of Lithuania; ‘VSAT’) concerning VSAT’s request for M.A.’s detention.
+
+ Legal context
+
+ European Union law
+
+ Directive 2011/95
+
+3        Article 4(1) of Directive 2011/95 provides:
+
+‘Member States may consider it the duty of the applicant to submit as soon as possible all the elements needed to substantiate the application for international protection. In cooperation with the applicant, it is the duty of the Member State to assess the relevant elements of the application.’
+
+ Directive 2013/32
+
+4        Article 2(c) of Directive 2013/32 provides:
+
+‘For the purposes of this Directive:
+
+…
+
+(c)      “applicant” means a third-country national or stateless person who has made an application for international protection in respect of which a final decision has not yet been taken’.
+
+5        Article 6 of Directive 2013/32 provides:
+
+‘1.      When a person makes an application for international protection to an authority competent under national law for registering such applications, the registration shall take place no later than three working days after the application is made.
+
+If the application for international protection is made to other authorities which are likely to receive such applications, but not competent for the registration under national law, Member States shall ensure that the registration shall take place no later than six working days after the application is made.
+
+Member States shall ensure that those other authorities which are likely to receive applications for international protection such as the police, border guards, immigration authorities and personnel of detention facilities have the relevant information and that their personnel receive the necessary level of training which is appropriate to their tasks and responsibilities and instructions to inform applicants as to where and how applications for international protection may be lodged.
+
+2.      Member States shall ensure that a person who has made an application for international protection has an effective opportunity to lodge it as soon as possible. Where the applicant does not lodge his or her application, Member States may apply Article 28 accordingly.
+
+3.      Without prejudice to paragraph 2, Member States may require that applications for international protection be lodged in person and/or at a designated place.
+
+4.      Notwithstanding paragraph 3, an application for international protection shall be deemed to have been lodged once a form submitted by the applicant or, where provided for in national law, an official report, has reached the competent authorities of the Member State concerned.
+
+5.      Where simultaneous applications for international protection by a large number of third-country nationals or stateless persons make it very difficult in practice to respect the time limit laid down in paragraph 1, Member States may provide for that time limit to be extended to 10 working days.’
+
+6        Article 7(1) of that directive provides:
+
+‘Member States shall ensure that each adult with legal capacity has the right to make an application for international protection on his or her own behalf.’
+
+7        Article 43 of that directive provides:
+
+‘1.      Member States may provide for procedures, in accordance with the basic principles and guarantees of Chapter II, in order to decide at the border or transit zones of the Member State on:
+
+(a)      the admissibility of an application, pursuant to Article 33, made at such locations; and/or
+
+(b)      the substance of an application in a procedure pursuant to Article 31(8).
+
+2.      Member States shall ensure that a decision in the framework of the procedures provided for in paragraph 1 is taken within a reasonable time. When a decision has not been taken within four weeks, the applicant shall be granted entry to the territory of the Member State in order for his or her application to be processed in accordance with the other provisions of this Directive.
+
+3.      In the event of arrivals involving a large number of third-country nationals or stateless persons lodging applications for international protection at the border or in a transit zone, which makes it impossible in practice to apply there the provisions of paragraph 1, those procedures may also be applied where and for as long as these third-country nationals or stateless persons are accommodated normally at locations in proximity to the border or transit zone.’
+
+ Directive 2013/33
+
+8        Recitals 15 and 20 of Directive 2013/33 read as follows:
+
+‘(15)      The detention of applicants should be applied in accordance with the underlying principle that a person should not be held in detention for the sole reason that he or she is seeking international protection, particularly in accordance with the international legal obligations of the Member States and with Article 31 of the Geneva Convention. Applicants may be detained only under very clearly defined exceptional circumstances laid down in this directive and subject to the principle of necessity and proportionality with regard to both to the manner and the purpose of such detention. Where an applicant is held in detention he or she should have effective access to the necessary procedural guarantees, such as judicial remedy before a national judicial authority.
+
+…
+
+(20)      In order to better ensure the physical and psychological integrity of the applicants, detention should be a measure of last resort and may only be applied after all non-custodial alternative measures to detention have been duly examined. Any alternative measure to detention must respect the fundamental human rights of applicants.’
+
+9        Article 2(h) of that directive provides:
+
+‘For the purposes of this Directive:
+
+…
+
+(h)      “detention”: means confinement of an applicant by a Member State within a particular place, where the applicant is deprived of his or her freedom of movement’.
+
+10      Article 8(2) and (3) of that directive provides:
+
+‘2.      When it proves necessary and on the basis of an individual assessment of each case, Member States may detain an applicant, if other less coercive alternative measures cannot be applied effectively.
+
+3.      An applicant may be detained only:
+
+…
+
+(e)      when protection of national security or public order so requires;
+
+…’
+
+11      Pursuant to Article 9 of that same directive:
+
+‘1.      An applicant shall be detained only for as short a period as possible and shall be kept in detention only for as long as the grounds set out in Article 8(3) are applicable.
+
+Administrative procedures relevant to the grounds for detention set out in Article 8(3) shall be executed with due diligence. Delays in administrative procedures that cannot be attributed to the applicant shall not justify a continuation of detention.
+
+2.      Detention of applicants shall be ordered in writing by judicial or administrative authorities. The detention order shall state the reasons in fact and in law on which it is based.
+
+3.      Where detention is ordered by administrative authorities, Member States shall provide for a speedy judicial review of the lawfulness of detention to be conducted ex officio and/or at the request of the applicant. When conducted ex officio, such review shall be decided on as speedily as possible from the beginning of detention. When conducted at the request of the applicant, it shall be decided on as speedily as possible after the launch of the relevant proceedings. To this end, Member States shall define in national law the period within which the judicial review ex officio and/or the judicial review at the request of the applicant shall be conducted.
+
+Where, as a result of the judicial review, detention is held to be unlawful, the applicant concerned shall be released immediately.
+
+4.      Detained applicants shall immediately be informed in writing, in a language which they understand or are reasonably supposed to understand, of the reasons for detention and the procedures laid down in national law for challenging the detention order, as well as of the possibility to request free legal assistance and representation.
+
+5.      Detention shall be reviewed by a judicial authority at reasonable intervals of time, ex officio and/or at the request of the applicant concerned, in particular whenever it is of a prolonged duration, relevant circumstances arise or new information becomes available which may affect the lawfulness of detention.
+
+6.      In cases of a judicial review of the detention order provided for in paragraph 3, Member States shall ensure that applicants have access to free legal assistance and representation. This shall include, at least, the preparation of the required procedural documents and participation in the hearing before the judicial authorities on behalf of the applicant.
+
+Free legal assistance and representation shall be provided by suitably qualified persons as admitted or permitted under national law whose interests do not conflict or could not potentially conflict with those of the applicant.
+
+7.      Member States may also provide that free legal assistance and representation are granted:
+
+(a)      only to those who lack sufficient resources; and/or
+
+(b)      only through the services provided by legal advisers or other counsellors specifically designated by national law to assist and represent applicants.
+
+8.      Member States may also:
+
+(a)      impose monetary and/or time limits on the provision of free legal assistance and representation, provided that such limits do not arbitrarily restrict access to legal assistance and representation;
+
+(b)      provide that, as regards fees and other costs, the treatment of applicants shall not be more favourable than the treatment generally accorded to their nationals in matters pertaining to legal assistance.
+
+9.      Member States may demand to be reimbursed wholly or partially for any costs granted if and when the applicant’s financial situation has improved considerably or if the decision to grant such costs was taken on the basis of false information supplied by the applicant.
+
+10.      Procedures for access to legal assistance and representation shall be laid down in national law.’
+
+ Lithuanian law
+
+12      Article 2(20) of the Lietuvos Respublikos įstatymas ‘Dėl užsieniečių teisinės padėties’ (Law of the Republic of Lithuania on the legal status of aliens), in the version applicable to the case in the main proceedings (‘the Law on Aliens’), provides that ‘asylum seeker’ means an alien who has made an application for asylum in accordance with that law and in respect of which a final decision has not yet been taken.
+
+13      Chapter X2 of the Law on Aliens deals with the application of that law in the event of a declaration of martial law or of a state of emergency and in the event of a declaration of an emergency due to a mass influx of aliens. Within that chapter, Article 14012 provides:
+
+‘1.      Aliens may lodge an application for asylum:
+
+(1)      with [VSAT] at a border control point or in a transit zone;
+
+(2)      with the [migration department] in the territory of the Republic of Lithuania, provided that the alien has entered Lithuania legally;
+
+(3)      in a foreign State, through the intermediary of the diplomatic and consular representatives of the Republic of Lithuania designated by the Minister for Foreign Affairs.
+
+2.      An application for asylum which an alien has lodged otherwise that in accordance with paragraph 1 of this article shall not be accepted and the procedure for making an application for asylum shall be explained to the applicant. In light of the particular vulnerability of an alien or other individual circumstances, [VSAT] may accept the application for asylum of an alien who has crossed the border of the Republic of Lithuania illegally.
+
+…’
+
+14      Article 14017 of the Law on Aliens, which governs the grounds on which an asylum seeker may be placed in detention in the event of a declaration of martial law or of a state of emergency or in the event of a declaration of an emergency due to a mass influx of aliens, provides, in paragraph 2 thereof, that an asylum seeker may be placed in detention if he or she has entered the territory of the Republic of Lithuania by crossing the national border of that Member State illegally.
+
+15      The procedures for granting and withdrawing asylum in Lithuania, approved by Decree No 1V‑131 of 24 February 2016 of the Minister for the Interior of the Republic of Lithuania (as amended by Decree No 1V‑626 of 27 July 2021 of the Minister for the Interior of the Republic of Lithuania; ‘the Asylum Procedures’) provide, in point 23 thereof, that, where an application for asylum is submitted to an authority which is not a designated authority under Article 67(1) of the Law on Aliens, or otherwise than in accordance with the rules set out in Article 67(2) or in point 22 of the Asylum Procedures, the application is to be returned to the alien by no later than two working days from the time when it is found that the application received by the authority is an application for asylum, and the applicant is to be informed of the procedure for making an application for asylum. That information is to be given to the alien in writing in a language which he or she may reasonably be supposed to understand. A copy of the reply given to the alien is to be sent to the authority designated under Article 67(1) of the Law on Aliens for the alien’s place of residence, if it is known.
+
+ The dispute in the main proceedings and the questions referred for a preliminary ruling
+
+16      By Decree No 517 of 2 July 2021, entitled ‘Declaration of a national emergency and appointment of the Head of Operations for the national emergency’ (TAR, 2021, No 2021‑15235; ‘Decree No 517/21’), the Lithuanian Government declared an emergency throughout its territory. On 10 November 2021, a state of emergency was declared for part of that territory, on the ground that that Member State found itself to be facing a mass influx of migrants, arriving mainly from Belarus.
+
+17      On 17 November 2021, M.A., a third-country national, was arrested in Poland, along with a group of individuals who had arrived from Lithuania, for the reason that he was in possession of neither travel documents nor the visa required in order to stay in that Member State and in the European Union. On 19 November 2021, M.A. was handed over to VSAT officials on Lithuanian territory. That same day, VSAT placed M.A. in detention for a maximum of 48 hours and requested the Alytaus apylinkės teismas (District Court, Alytus, Lithuania) to order his detention for a maximum of six months.
+
+18      VSAT stated to that court that there was no information concerning M.A. in any Lithuanian databases and that he was in Lithuania illegally. Having regard to all of the relevant circumstances, VSAT had formed the view that M.A. was liable to abscond in order to avoid being placed in detention or removed from that Member State and it accordingly requested that M.A. be placed in detention for a period not exceeding six months while his legal situation was established.
+
+19      In the course of the hearing before the Alytaus apylinkès teismas (District Court, Alytus), M.A. made an application for international protection. By decision of 20 November 2021, that court ordered that M.A. be placed in detention until a decision could be adopted on his legal situation in Lithuania, and until 18 February 2022 at the latest, on the ground that there was a risk of his absconding and that it would not be possible to determine the reasons underlying his application for asylum in the absence of that detention measure.
+
+20      M.A. brought an appeal against that decision before the referring court, the Lietuvos vyriausiasis administracinis teismas (Supreme Administrative Court of Lithuania). At the hearing before that court, M.A. repeated his request for asylum and stated that he had already made an application for asylum, on 20 November 2021, to an unidentified official within VSAT. However, VSAT asserts that it has no information relating to that application.
+
+21      On 24 January 2022, M.A. made a written application to VSAT for asylum. That application was rejected by the migration department as inadmissible, in particular, on the basis of Article 14012(1) of the Law on Aliens.
+
+22      M.A. has argued before the referring court that he has had no information regarding the outcome of his application for asylum and that he has not been informed of the procedure for making such an application. On 1 February 2022, in the course of a subsequent hearing before that court, the representatives of M.A. and VSAT requested the court to instruct the migration department to examine M.A.’s application for international protection.
+
+23      The referring court points out, first of all, that, in the event of an emergency caused by a mass influx of migrants, such as that declared by Decree No 517/21, an application for asylum must comply with the conditions laid down in Article 14012(1) of the Law on Aliens, failing which it will be inadmissible. Moreover, pursuant to Article 14017 of the Law on Aliens, in such an emergency, an alien who has entered Lithuanian territory illegally may be placed in detention.
+
+24      The combined application of those provisions of the Law on Aliens means that, since he entered Lithuanian territory illegally and has been placed in detention, it is impossible for M.A. to make an application for international protection or, consequently, to be classified as an asylum seeker.
+
+25      However, because of the emergency declared by Decree No 517/21, measures less restrictive than detention can be taken only with regard to asylum seekers.
+
+26      The referring court thus considers it to be impossible for a measure less restrictive than detention to be imposed on any third-country national who has entered Lithuania illegally and is staying there illegally.
+
+27      Admittedly, under Article 14012(2) of the Law on Aliens, VSAT enjoys a discretion and may, having regard to their particular vulnerability or other individual circumstances, grant the status of asylum seeker to third-country nationals who have crossed the border into Lithuania illegally. Nevertheless, the manner in which that discretion may be exercised has not been regulated precisely and so the referring court considers that it is not in a position to rule on the lawfulness of the measures taken in this case by VSAT.
+
+28      That being so, the referring court is seeking to determine whether Directives 2011/95 and 2013/32 preclude provisions of national law pursuant to which, in the event that an emergency is declared in response to a mass influx of aliens, an alien who has entered the territory of a Member State illegally and is staying there illegally may be effectively deprived of the opportunity to make an application for international protection.
+
+29      Secondly, the referring court questions the consistency with EU law of the provisions which, when an emergency has been declared in response to a mass influx of aliens, enable the Lithuanian authorities to place an individual in M.A.’s position in detention for the sole reason that he or she has entered Lithuanian territory illegally. The referring court questions the consistency of those provisions with recital 15 and Article 8(2) and (3) of Directive 2013/33, in accordance with which applicants for international protection may be detained only under clearly defined exceptional circumstances and only in accordance with the principle of proportionality.
+
+30      Furthermore, because of the doubts surrounding the lawfulness of the initial detention of M.A., in its decision to make the reference, the referring court instructed VSAT to place M.A. provisionally, until 18 February 2022, in an accommodation centre or some other appropriate place where his freedom of movement would be restricted to within the perimeter of that place. In addition, the referring court has instructed the migration department not to deport M.A. or remove him to a third country until such time as a final decision is taken in the case in the main proceedings.
+
+31      It was in those circumstances that the Lietuvos vyriausiasis administracinis teismas (Supreme Administrative Court of Lithuania) decided to stay the proceedings and to refer the following questions to the Court of Justice for a preliminary ruling:
+
+‘(1)      Must Article 7(1) of Directive [2013/32], read in conjunction with Article 4(1) of Directive [2011/95], be interpreted as precluding rules of national law, such as those applicable in the present case, which, in the event of a declaration of martial law, a state of emergency or also a declaration of an emergency due to a mass influx of foreigners, do not in principle allow a foreigner who has entered and remains unlawfully in the territory of a Member State to lodge an application for international protection?
+
+(2)      If the answer to the first question is in the affirmative, must Article 8(2) and (3) of Directive [2013/33] be interpreted as precluding rules of national law under which, in the event of a declaration of martial law, a state of emergency or also a declaration of an emergency due to a mass influx of foreigners, an asylum applicant may be detained merely because he or she entered the territory of the Republic of Lithuania by crossing the State border of the Republic of Lithuania unlawfully?’
+
+ Urgent preliminary ruling procedure
+
+32      The referring court has requested that the present reference for a preliminary ruling be dealt with under the urgent preliminary ruling procedure provided for in Article 107 of the Rules of Procedure of the Court of Justice.
+
+33      In support of that request, it has stated that M.A. was held in detention from 17 November 2021 until 2 February 2021, when the decision to make the reference was adopted. In accordance with that order, M.A. was placed in one of VSAT’s accommodation centres, under the conditions mentioned in paragraph 30 of this judgment. The referring court has also stated that the applicable rules permit VSAT, when that provisional measure expired on 18 February 2022, to make a fresh application to the court of first instance for M.A. to be placed in detention or for another measure to be adopted regarding him.
+
+34      On 21 February 2022, the First Chamber of the Court requested from the referring court information regarding M.A.’s situation after the measure which the latter had ordered expired and about the restrictions of personal freedom which that measure entailed.
+
+35      The referring court stated in reply that, on 11 February 2022, the Marijampolės apylinkės teismas (District Court, Marijampolė, Lithuania) had adopted with regard to M.A. a measure similar to that ordered by the referring court, referred to in paragraph 30 of this judgment. That measure was ordered until such time as M.A.’s legal status could be determined, and until 11 May 2022 at the latest.
+
+36      It should be stated, in the first place, that the present reference for a preliminary ruling concerns the interpretation of Directives 2011/95, 2013/32 and 2013/33, which fall under Title V of Part Three of the FEU Treaty, on the area of freedom, security and justice. Consequently, it can be dealt with under the urgent preliminary ruling procedure.
+
+37      In the second place, as regards the condition relating to urgency, it should be emphasised that that condition is satisfied, in particular, where the person concerned in the main proceedings is currently deprived of his or her liberty and when his or her continued detention depends on the outcome of the dispute in the main proceedings. In that regard, the situation of the person concerned must be assessed as it stood at the time when consideration was given to whether the reference should be dealt with under the urgent procedure (judgment of 14 May 2020, Országos Idegenrendészeti Főigazgatóság Dél-alföldi Regionális Igazgatóság, C-924/19 PPU and C-925/19 PPU, EU:C:2020:367, paragraph 99 and the case-law cited).
+
+38      According to settled case-law, the placing of a third-country national in a detention centre, whether in the course of his or her application for international protection or with a view to his or her removal, constitutes a measure that deprives the person concerned of his or her freedom (judgment of 14 May 2020, Országos Idegenrendészeti Főigazgatóság Dél-alföldi Regionális Igazgatóság, C-924/19 PPU and C-925/19 PPU, EU:C:2020:367, paragraph 100 and the case-law cited).
+
+39      Furthermore, as regards the concept of ‘detention’, for the purposes of Article 2(h) of Directive 2013/33, the Court has already held that it is apparent from the wording and history of that provision, and from the context in which it occurs, that the detention of an applicant for international protection constitutes a coercive measure that deprives the applicant of his or her freedom of movement and isolates him or her from the rest of the population, by requiring him or her to remain permanently within a restricted and closed perimeter (see, to that effect, judgment of 14 May 2020, Országos Idegenrendészeti Főigazgatóság Dél-alföldi Regionális Igazgatóság, C-924/19 PPU and C-925/19 PPU, EU:C:2020:367, paragraph 223).
+
+40      In the present case, it must be observed, in the first place, that, at the time when consideration was given to whether the reference should be dealt with under the urgent procedure, M.A. was the subject of a measure ‘other’ than detention, within the meaning of Lithuanian law, inasmuch as he was being accommodated in one of VSAT’s centres with his movements being restricted to the perimeter of that place of accommodation.
+
+41      It is apparent from the information sent by the referring court that, although M.A. could move about within the VSAT centre in question, he could not go beyond the centre’s perimeter without authorisation or unaccompanied. Consequently, it appears that he was isolated from the rest of the population and deprived of his freedom of movement.
+
+42      That being so, he must be regarded as being in detention, within the meaning of Article 2(h) of Directive 2013/33.
+
+43      In the second place, as regards the connection between continued detention and the resolution of the dispute in the main proceedings, it is clear from the decision to make the reference, first, that the first question referred concerns the ability of the applicant in the main proceedings to make an application for international protection and thus to acquire the status of asylum seeker. According to the information provided by the referring court, that status of asylum seeker is necessary in order for a measure to be applied that does not entail the restriction of movement which characterises the concept of detention.
+
+44      Secondly, the second question referred for a preliminary ruling is essentially aimed at determining whether Article 8(2) and (3) of Directive 2013/33 permits the detention of M.A. merely because he is staying illegally in Lithuania.
+
+45      Having regard to those matters, on 3 March 2022, the First Chamber of the Court decided, acting on a proposal from the Judge-Rapporteur and after hearing the Advocate General, to grant the referring court’s request for the present reference for a preliminary ruling to be dealt with under the urgent procedure.
+
+ The questions referred for a preliminary ruling
+
+ The first question
+
+ Whether the first question referred still serves a purpose
+
+46      At the hearing, the Lithuanian Government stated that, on 18 March 2022, M.A. had made an application for international protection which is currently being examined by the competent authorities. Therefore, without expressly arguing its inadmissibility, the Lithuanian Government stated that there was no longer any need for the Court to answer the first question referred for a preliminary ruling, since it no longer served any purpose.
+
+47      The procedure provided for in Article 267 TFEU is an instrument of cooperation between the Court of Justice and the national courts, by means of which the former provides the national courts with the points of interpretation of EU law which they need in order to decide the disputes before them (judgment of 19 November 2019, A. K. and Others (Independence of the Disciplinary Chamber of the Supreme Court), C-585/18, C-624/18 and C-625/18, EU:C:2019:982, paragraph 69).
+
+48      In that regard, it should be borne in mind that the justification for a reference for a preliminary ruling is not that it enables advisory opinions on general or hypothetical questions to be delivered but rather that it is necessary for the effective resolution of a dispute. Therefore, if it appears that the question raised is manifestly no longer relevant for the purposes of deciding the case, the Court must declare that there is no need to proceed to judgment (judgment of 19 November 2019, A. K. and Others (Independence of the Disciplinary Chamber of the Supreme Court), C-585/18, C-624/18 and C-625/18, EU:C:2019:982, paragraph 70).
+
+49      However, even supposing that M.A. did indeed make an application for international protection on 18 March 2022 and that it is currently being examined, it is clear from the decision to make the reference that, by its first question, the referring court seeks to determine the legality of the measures that were applied to M.A. from the time when he first attempted to make an application for international protection, which he says was on 20 November 2021.
+
+50      It follows that the first question referred for a preliminary ruling continues to be useful for the resolution of the dispute in the main proceedings and that it should therefore be answered.
+
+ Substance
+
+51      In the cooperation procedure provided for in Article 267 TFEU, referred to in paragraph 47 of this judgment, even if, formally, the referring court has limited its question to the interpretation of a particular provision of EU law, that does not prevent the Court from providing the referring court with all the elements of interpretation of EU law which may be of assistance in adjudicating in the case pending before it, whether or not the referring court has referred to them in the wording of its questions. It is, in this regard, for the Court to extract from all the information provided by the national court, in particular from the grounds of the decision to make the reference, the points of EU law which require interpretation in view of the subject matter of the dispute in the main proceedings (judgment of 15 July 2021, DocMorris, C-190/20, EU:C:2021:609, paragraph 23 and the case-law cited).
+
+52      In the present case, it should be noted that the first question referred, which concerns, among other things, the interpretation of Article 4(1) of Directive 2011/95, is justified by the doubts which the referring court has expressed regarding the conditions which govern the submission of applications for international protection in Lithuania. Article 4(1) of Directive 2011/95, however, concerns the assessment which the Member State in question is to make of the relevant elements of such an application and, consequently, it does not appear to be relevant for the purposes of resolving the dispute in the main proceedings.
+
+53      Moreover, in so far as the first question referred for a preliminary ruling concerns the conditions governing the submission of applications for international protection, it is also appropriate to interpret Article 6 of Directive 2013/32, which lays down the rules relating to access to the procedure in which such applications are examined.
+
+54      In addition, according to the information provided by the referring court, in an emergency due to a mass influx of aliens, failure to comply with the conditions governing the submission of applications for international protection laid down in Article 14012(1) of the Law on Aliens results in the non-acceptance of the application, which, in accordance with point 23 of the Asylum Procedures, will be returned to the individual concerned unexamined.
+
+55      That, as the Advocate General noted in point 58 of his Opinion, means that third-country nationals who do not satisfy the conditions for entry to Lithuania can, in substance, make a valid application for asylum only from abroad or at the Lithuanian border. If they enter the territory of that Member State illegally, however, third-country nationals lose that opportunity. Indeed, in such cases, the national authorities will take no account of their application.
+
+56      That being so, in order to provide a useful answer to the first question, it is appropriate to consider that, by that question, the referring court is asking, in substance, whether Article 6 and Article 7(1) of Directive 2013/32 are to be interpreted as precluding legislation of a Member State under which, in the event of a declaration of martial law or of a state of emergency or in the event of a declaration of an emergency due to a mass influx of aliens, illegally staying third-country nationals are effectively deprived of the opportunity of access, in the territory of that Member State, to the procedure in which applications for international protection are examined.
+
+57      It is clear from Article 6(1), (3) and (4) of Directive 2013/32 that the act of ‘making’ an application for international protection entails no administrative formalities, such formalities having to be observed when the application is ‘lodged’. That latter act, in principle, requires the applicant for international protection to complete a form provided for that purpose in accordance with Article 6(4) of that directive (see, to that effect, judgment of 25 June 2020, Ministerio Fiscal (Authority likely to receive an application for international protection), C-36/20 PPU, EU:C:2020:495, paragraph 93).
+
+58      As regards specifically the act of ‘making’ an application for international protection, it should be clearly stated that Article 7(1) of Directive 2013/32 provides that any adult with legal capacity has the right to make an application for international protection on his or her own behalf. Moreover, it is clear from the Court’s case-law that any third-country national or stateless person has the right to make an application for international protection on the territory of a Member State, including at its borders or in its transit zones, even if he or she is staying illegally in that Member State. That right must be recognised, irrespective of the prospects of success of such an application (judgment of 16 November 2021, Commission v Hungary (Criminalisation of assistance to asylum seekers), C-821/19, EU:C:2021:930, paragraph 136).
+
+59      Moreover, Article 6(2) of Directive 2013/32 lays down the obligation for Member States to ensure that any person who has made an application for international protection has an effective opportunity to lodge it as soon as possible (see, to that effect, judgment of 25 June 2020, Ministerio Fiscal (Authority likely to receive an application for international protection), C-36/20 PPU, EU:C:2020:495, paragraph 63).
+
+60      It must be emphasised in this connection, in the first place, that the making, registration and lodging of applications must accord with the objective of Directive 2013/32 of guaranteeing effective access, namely access that is as straightforward as possible, to the procedure for granting international protection (see, to that effect, judgment of 25 June 2020, Ministerio Fiscal (Authority likely to receive an application for international protection), C-36/20 PPU, EU:C:2020:495, paragraph 63).
+
+61      In the second place, the right to make such an application makes the observance of the applicant’s rights conditional, first, on that application being registered and being able to be lodged and examined within the periods prescribed by Directive 2013/32 and, secondly and ultimately, is a condition of the effectiveness of the right to asylum, as guaranteed by Article 18 of the Charter of Fundamental Rights of the European Union (‘the Charter’) (see, to that effect, judgment of 17 December 2020, Commission v Hungary (Reception of applicants for international protection), C-808/18, EU:C:2020:1029, paragraph 102).
+
+62      Thus, while the making and the lodging of an application for international protection are two separate, successive steps (see, to that effect, judgment of 25 June 2020, Ministerio Fiscal (Authority likely to receive an application for international protection), C-36/20 PPU, EU:C:2020:495, paragraph 93), there is nevertheless a close connection between those acts, inasmuch as they are meant to ensure effective access to the procedure in which applications for international protection are examined and to ensure the effectiveness of Article 18 of the Charter.
+
+63      It must therefore be held that the application of national legislation, such as Article 14012(1) of the Law on Aliens, which provides that third-country nationals who are staying illegally are, for that reason alone, deprived, after entering Lithuania, of the opportunity of making or lodging an application for international protection, thus prevents such nationals from effectively enjoying the right enshrined in Article 18 of the Charter.
+
+64      Those conditions governing access to the procedure for examining applications for international protection laid down in Article 14012(1) of the Law on Aliens cannot be regarded as complying with the requirements laid down in Article 6 and Article 7(1) of Directive 2013/32.
+
+65      Admittedly, under Article 6(3) of Directive 2013/32, the Member States may require that applications for international protection be lodged in person and/or at a designated place. Nevertheless, as the Advocate General noted in point 75 of his Opinion, the Member States cannot exercise that option in such a manner as would, in practice, prevent third-country nationals, or some of them, from lodging an application or from lodging one ‘as soon as possible’. Any contrary interpretation would run counter to the objective of Directive 2013/32 of ensuring effective, easy and rapid access to the procedure for granting international protection, and would seriously undermine the practical effectiveness of the right to seek asylum, which, under Article 7 of the directive, every third-country national enjoys.
+
+66      The same applies where a third-country national’s access to the procedure referred to in Article 6 of Directive 2013/32 can nevertheless be ensured by means of the exercise of a discretionary power, such as provided for in Article 14012(2) of the Law on Aliens, which allows the authority responsible to agree to examine an application for international protection in light of the particular vulnerability of the applicant or other exceptional circumstances.
+
+67      In this regard, it is sufficient to note that, as indicated in paragraph 58 of this judgment, according to the wording of Article 7(1) of Directive 2013/32 and the case-law of the Court, ‘each adult’ and ‘any third-country national’ has the right to make an application for international protection. Accordingly, a provision of national law, such as Article 14012(2) of the Law on Aliens, which allows the competent authority a discretion to consider the applications of only some illegally staying individuals, in light of their particular vulnerability, does not satisfy the requirements laid down in Article 7(1) of Directive 2013/32.
+
+68      Notwithstanding, the Lithuanian Government puts forward, as justification for the restrictions upon the right to submit an application for international protection resulting from Article 14012(1) of the Law on Aliens, the threat to public order or internal security which the Republic of Lithuania is facing on account of the mass influx of migrants at its borders, arriving mainly from Belarus.
+
+69      In light of that, it is important to note that, pursuant to Article 72 TFEU, the provisions of Title V of Part Three of that Treaty do not affect the exercise of the responsibilities incumbent upon Member States with regard to the maintenance of law and order and the safeguarding of internal security.
+
+70      It must be remembered in this connection that, although it is for the Member States to adopt appropriate measures to ensure law and order on their territory and their internal and external security, it does not follow that such measures fall entirely outside the scope of EU law. As the Court has held, only in clearly defined cases does the FEU Treaty expressly provide for derogations applicable in situations which may affect law and order or public security. It cannot be inferred that the FEU Treaty contains an inherent general exception excluding all measures taken for reasons of law and order or public security from the scope of EU law. The recognition of the existence of such an exception, regardless of the specific requirements laid down by the Treaty, might impair the binding nature of EU law and its uniform application (see, to that effect, judgment of 17 December 2020, Commission v Hungary (Reception of applicants for international protection), C-808/18, EU:C:2020:1029, paragraph 214).
+
+71      In addition, the derogation provided for in Article 72 TFEU must be interpreted strictly. It follows that Article 72 TFEU cannot be read in such a way as to confer on Member States a power to depart from the provisions of EU law based on no more than reliance on the responsibilities incumbent upon Member States with regard to the maintenance of law and order and the safeguarding of internal security (see, to that effect, judgment of 17 December 2020, Commission v Hungary (Reception of applicants for international protection), C-808/18, EU:C:2020:1029, paragraph 215).
+
+72      That being so, and having regard to the case-law cited in paragraphs 70 and 71 of this judgment, the placing of reliance, generally, on threats to public order or internal security caused by the mass influx of third-country nationals provides no justification, by reference to Article 72 TFEU, for a provision, such as Article 14012 of the Law on Aliens, which causes third-country nationals staying illegally on the territory of a Member State to be deprived de facto of the right to submit an application for international protection on the territory of that Member State.
+
+73      Moreover, the Lithuanian Government has not specified what effect such a measure would have on the maintenance of public order and the safeguarding of internal security in the context of the emergency caused by the mass influx of migrants in question.
+
+74      Furthermore, as is clear from points 125 to 127 and 130 of the Advocate General’s Opinion, Directive 2013/32, in particular Article 43 thereof, allows the Member States to establish special procedures, to be applied at their borders, for assessing the admissibility of applications for international protection where the conduct of the applicant suggests that his or her application is manifestly unfounded or abusive. Such procedures enable the Member States to carry out, at the European Union’s external borders, their responsibilities with regard to the maintenance of public order and the safeguarding of internal security, without it being necessary to rely on a derogation under Article 72 TFEU.
+
+75      Having regard to all the foregoing considerations, the answer to the first question referred for a preliminary ruling must be that Article 6 and Article 7(1) of Directive 2013/32 are to be interpreted as precluding legislation of a Member State under which, in the event of a declaration of martial law or of a state of emergency or in the event of a declaration of an emergency due to a mass influx of aliens, illegally staying third-country nationals are effectively deprived of the opportunity of access, in the territory of that Member State, to the procedure in which applications for international protection are examined.
+
+ The second question
+
+ Admissibility
+
+76      At the hearing, the Lithuanian Government argued, in substance, that it was not necessary to rule on the second question referred for a preliminary ruling, since, on 2 February 2022, the referring court had ordered that a measure ‘other’ than detention, within the meaning of Lithuanian law, be adopted with regard to M.A. and that that measure had, in substance, been renewed until 11 May 2022.
+
+77      However, in that regard, it is sufficient to recall that it is clear from paragraph 42 of this judgment that the measure adopted with regard to M.A. constitutes detention within the meaning of Article 2(h) of Directive 2013/33.
+
+78      That being so, it must be held that it is necessary to answer the second question, which is admissible.
+
+ Substance
+
+79      The referring court asks, in substance, whether Article 8(2) and (3) of Directive 2013/33 must be interpreted as precluding legislation of a Member State under which, in the event of a declaration of martial law or of a state of emergency or in the event of a declaration of an emergency due to a mass influx of aliens, an asylum seeker may be placed in detention for the sole reason that he or she is staying illegally on the territory of that Member State.
+
+80      It must be clearly stated at the outset that, according to the Court’s case-law, a third-country national acquires the status of an applicant for international protection, within the meaning of Article 2(c) of Directive 2013/32, from the point when he or she ‘makes’ such an application (judgment of 25 June 2020, Ministerio Fiscal (Authority likely to receive an application for international protection), C-36/20 PPU, EU:C:2020:495, paragraph 92).
+
+81      It is clear from the Court’s case-law that Articles 8 and 9 of Directive 2013/32, read in conjunction with recitals 15 and 20 thereof, place significant limitations on the Member States’ power to hold a person in detention (judgment of 25 June 2020, Ministerio Fiscal (Authority likely to receive an application for international protection), C-36/20 PPU, EU:C:2020:495, paragraph 101).
+
+82      Thus, under Article 8(2) of that directive, an applicant for international protection may be held in detention only where, following an assessment carried out on a case-by-case basis, that is necessary and where other less coercive measures cannot be applied effectively. It follows that national authorities may hold an applicant for international protection in detention only after having determined, on the basis of an individual assessment, whether such detention is proportionate to the aims pursued by detention (judgment of 25 June 2020, Ministerio Fiscal (Authority likely to receive an application for international protection), C-36/20 PPU, EU:C:2020:495, paragraph 102).
+
+83      As regards Article 8(3) of Directive 2013/33, it follows from the Court’s settled case-law that that provision lists exhaustively the various grounds which may justify recourse to detention and that each of those grounds meets a specific need and is self-standing. In view of the importance of the right to liberty enshrined in Article 6 of the Charter and the gravity of the interference with that right which detention represents, limitations on the exercise of the right must apply only in so far as is strictly necessary (see, to that effect, judgment of 25 June 2020, Ministerio Fiscal (Authority likely to receive an application for international protection), C-36/20 PPU, EU:C:2020:495, paragraphs 104 and 105).
+
+84      However, it must be pointed out that the circumstance that an applicant for international protection is staying illegally on the territory of a Member State is not among the grounds which, under Article 8(3) of Directive 2013/33, are capable of justifying the detention of such an applicant. Consequently, a third-country national may not be made the subject of a detention measure for that reason alone.
+
+85      Nevertheless, it would appear necessary, in order to provide the referring court with a useful answer, to determine whether such a circumstance can justify the detention of an asylum seeker on the ground of the protection of national security or public order referred to in point (e) of Article 8(3) of Directive 2013/33, as the Lithuanian Government essentially considers. In particular, according to that government, in the exceptional context of the mass influx of aliens arriving from Belarus, the conduct of an individual in M.A.’s position constitutes a threat to public order and national security in the Republic of Lithuania. At the hearing, the government of that Member State also advanced the threat which a foreign national in M.A.’s position represents for public order and public security in other Member States of the European Union.
+
+86      It must be remembered, in this connection, that the strict circumscription of the power of the competent national authorities to detain an applicant on the basis of point (e) of the first subparagraph of Article 8(3) of Directive 2013/33 is also ensured by the interpretation which the case-law of the Court of Justice gives to the concepts of ‘national security’ and ‘public order’ found in other directives and which also applies in the case of Directive 2013/33 (judgment of 15 February 2016, N., C-601/15 PPU, EU:C:2016:84, paragraph 64).
+
+87      The Court has thus held that the concept of ‘public order’ entails, in any event, the existence – in addition to the disturbance of the social order which any infringement of the law involves – of a genuine, present and sufficiently serious threat affecting one of the fundamental interests of society (judgment of 15 February 2016, N., C-601/15 PPU, EU:C:2016:84, paragraph 65 and the case-law cited).
+
+88      So far as the concept of ‘public security’ is concerned, this concept covers both the internal security of a Member State and its external security and, consequently, a threat to the functioning of institutions and essential public services and the survival of the population, as well as the risk of a serious disturbance to foreign relations or to peaceful coexistence of nations, or a risk to military interests, may affect public security (see, to that effect, judgment of 15 February 2016, N., C-601/15 PPU, EU:C:2016:84, paragraph 66 and the case-law cited).
+
+89      It follows from those considerations that placing or keeping an applicant in detention under point (e) of the first subparagraph of Article 8(3) of Directive 2013/33 is, in view of the requirement of necessity, justified on the ground of a threat to national security or public order only if the applicant’s individual conduct represents a genuine, present and sufficiently serious threat affecting a fundamental interest of society or the internal or external security of the Member State concerned (judgment of 15 February 2016, N., C-601/15 PPU, EU:C:2016:84, paragraph 67).
+
+90      That being so, the illegal nature of the presence of an applicant for international protection cannot, in itself, be regarded as demonstrating the existence of a sufficiently serious threat affecting a fundamental interest of society or as revealing a threat to another of the interests mentioned in paragraph 89 of this judgment. Accordingly, it cannot be accepted that such an applicant can, for the sole reason that he or she is staying illegally in a Member State, constitute a threat to national security or public order in that Member State, within the meaning of Article 8(3)(e) of Directive 2013/33.
+
+91      That finding does not alter the fact that it is possible for an applicant for international protection whose presence in a Member State is illegal to be regarded as posing such a threat on account of specific circumstances which demonstrate that he or she is dangerous, in addition to being illegally present.
+
+92      Finally, to the extent that the arguments which the Lithuanian Government put forward at the hearing may be understood as raising the possibility of derogating, on the basis of Article 72 TFEU, from all of the provisions of Directive 2013/33 on account of the exceptional situation of an influx of migrants, it must be observed that that government confines itself to putting forward general considerations in that regard which are not, in light of the case-law mentioned in paragraphs 70 and 71 of this judgment, capable of justifying the application of that article.
+
+93      Taking all of those considerations into account, the answer to the second question referred for a preliminary ruling is that Article 8(2) and (3) of Directive 2013/33 must be interpreted as precluding legislation of a Member State under which, in the event of a declaration of martial law or of a state of emergency or in the event of a declaration of an emergency due to a mass influx of aliens, an asylum seeker may be placed in detention for the sole reason that he or she is staying illegally on the territory of that Member State.
+
+ Costs
+
+94      Since these proceedings are, for the parties to the main proceedings, a step in the action pending before the referring court, the decision on costs is a matter for that court. Costs incurred in submitting observations to the Court, other than the costs of those parties, are not recoverable.
+
+On those grounds, the Court (First Chamber) hereby rules:
+
+1.      Article 6 and Article 7(1) of Directive 2013/32/EU of the European Parliament and of the Council of 26 June 2013 on common procedures for granting and withdrawing international protection are to be interpreted as precluding legislation of a Member State under which, in the event of a declaration of martial law or of a state of emergency or in the event of a declaration of an emergency due to a mass influx of aliens, illegally staying third-country nationals are effectively deprived of the opportunity of access, in the territory of that Member State, to the procedure in which applications for international protection are examined.
+
+2.      Article 8(2) and (3) of Directive 2013/33/EU of the European Parliament and of the Council of 26 June 2013 laying down standards for the reception of applicants for international protection must be interpreted as precluding legislation of a Member State under which, in the event of a declaration of martial law or of a state of emergency or in the event of a declaration of an emergency due to a mass influx of aliens, an asylum seeker may be placed in detention for the sole reason that he or she is staying illegally on the territory of that Member State.
+
+[Signatures]
+
