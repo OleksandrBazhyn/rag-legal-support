@@ -22,3 +22,4 @@ dist/
 .vscode/
 *.swp
 data/.index_state.json
+SYSTEM_DESCRIPTION_FULL.md
