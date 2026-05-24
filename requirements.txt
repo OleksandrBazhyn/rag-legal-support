@@ -7,8 +7,12 @@ python-dotenv==1.0.1
 # Vector DB
 chromadb==0.6.3
 
-# Embeddings
+# Embeddings + Reranking
 sentence-transformers==3.1.1
+# Tokenizer (token-based chunking)
+tiktoken>=0.7.0
+# BM25 (hybrid search)
+rank-bm25>=0.2.2
 
 # LLM
 openai==2.36.0
@@ -35,3 +39,7 @@ apscheduler>=3.10
 bcrypt==4.2.1
 python-jose[cryptography]==3.3.0
 email-validator==2.2.0
+
+# Evaluation — RAGAS
+ragas>=0.2.0
+datasets>=2.14.0

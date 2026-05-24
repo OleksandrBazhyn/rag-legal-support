@@ -113,7 +113,7 @@ def _to_html(text: str) -> str:
     text = re.sub(r'<strong>(.*?)</strong>', r'**\1**', text, flags=re.DOTALL)
     text = re.sub(r'<i>(.*?)</i>',       r'_\1_',     text, flags=re.DOTALL)
     text = re.sub(r'<em>(.*?)</em>',     r'_\1_',     text, flags=re.DOTALL)
-    text = re.sub(r'<[^>]+>', '', text)   # прибираємо решту HTML-тегів
+    text = re.sub(r'</?[a-zA-Z][^>]*>', '', text)   # прибираємо решту HTML-тегів (тільки валідні теги)
     text = escape(text)
     text = re.sub(r'\*\*(.+?)\*\*', r'<b>\1</b>', text, flags=re.DOTALL)
     text = re.sub(r'__(.+?)__',     r'<b>\1</b>', text, flags=re.DOTALL)
@@ -797,7 +797,7 @@ async def _process_question(
         thinking_msg = status_msg
 
     try:
-        async with httpx.AsyncClient(timeout=60.0) as client:
+        async with httpx.AsyncClient(timeout=120.0) as client:
             resp = await client.post(
                 f"{API_BASE_URL}/query",
                 json={
@@ -833,6 +833,11 @@ async def _process_question(
             src_names = [Path(s).stem for s in sources]  # тільки ім'я файлу
             src = ", ".join(f"<code>{escape(n)}</code>" for n in src_names)
             reply += f"\n\n📚 <i>Джерела: {src}</i>"
+
+        reply += (
+            "\n\n<i>⚠️ Відповідь згенерована штучним інтелектом на основі правових документів. "
+            "Перевіряйте актуальність інформації в офіційних джерелах або у кваліфікованого юриста.</i>"
+        )
 
         # Inline-кнопки швидких дій (не для override-профілів типу /checklist)
         markup = _answer_keyboard() if profile_override is None else None

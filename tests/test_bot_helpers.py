@@ -20,9 +20,6 @@ from bot.telegram_bot import (
     _MAX_HISTORY,
 )
 
-
-# ─── _to_html ─────────────────────────────────────────────────────────────────
-
 class TestToHtml:
     def test_bold_double_asterisk(self):
         assert _to_html("**жирний**") == "<b>жирний</b>"
@@ -76,8 +73,6 @@ class TestToHtml:
         assert "Другий абзац." in result
 
 
-# ─── _is_greeting ─────────────────────────────────────────────────────────────
-
 class TestIsGreeting:
     def test_single_word_hi(self):
         assert _is_greeting("Привіт") is True
@@ -106,9 +101,6 @@ class TestIsGreeting:
 
     def test_vітання(self):
         assert _is_greeting("Вітання") is True
-
-
-# ─── _detect_status ───────────────────────────────────────────────────────────
 
 class TestDetectStatus:
     def test_detects_temporary_protection_paragraph(self):
@@ -139,9 +131,6 @@ class TestDetectStatus:
         """Пошук без урахування регістру."""
         assert _detect_status("У мене AUFENTHALTSERLAUBNIS") == "residence_permit"
 
-
-# ─── _default_profile ─────────────────────────────────────────────────────────
-
 class TestDefaultProfile:
     def test_has_required_keys(self):
         p = _default_profile()
@@ -162,9 +151,6 @@ class TestDefaultProfile:
         p2 = _default_profile()
         p1["region"] = "Berlin"
         assert p2["region"] == "unknown"
-
-
-# ─── Константи нагадувань ─────────────────────────────────────────────────────
 
 class TestReminderConstants:
     def test_thresholds_sorted_descending(self):
@@ -197,9 +183,6 @@ class TestReminderConstants:
         assert "Test Bescheid" in result
         assert "25" in result
 
-
-# ─── Checklist procedures ─────────────────────────────────────────────────────
-
 class TestChecklistProcedures:
     def test_procedures_not_empty(self):
         assert len(_CHECKLIST_PROCEDURES) >= 5
@@ -213,9 +196,6 @@ class TestChecklistProcedures:
     def test_all_values_non_empty(self):
         for key, value in _CHECKLIST_PROCEDURES.items():
             assert value, f"Empty procedure description for key: {key}"
-
-
-# ─── Константи бота ───────────────────────────────────────────────────────────
 
 class TestBotConstants:
     def test_max_history_even(self):

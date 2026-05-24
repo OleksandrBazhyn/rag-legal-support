@@ -10,7 +10,7 @@ from api.models import UserProfile, ProfileResponse
 
 router = APIRouter()
 
-# In-memory сховище профілів (у продакшні — замінити на БД)
+# In-memory сховище профілів (у продакшні - БД)
 _profiles: OrderedDict[str, dict] = OrderedDict()
 _MAX_PROFILES = 10_000
 

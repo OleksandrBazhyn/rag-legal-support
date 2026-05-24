@@ -12,6 +12,39 @@ from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from api.auth import db as auth_db
 from api.auth.utils import decode_token
 from api.models import QueryRequest, QueryResponse
+
+_QUERY_EXAMPLE = {
+    "question": "Яка сума Bürgergeld для одинокої особи у 2024 році?",
+    "profile": {
+        "legal_status": "temporary_protection",
+        "region": "Berlin",
+        "query_category": "social_benefits",
+        "language": "uk",
+    },
+    "chat_history": [],
+}
+
+_QUERY_RESPONSES: dict = {
+    200: {
+        "description": "Успішна відповідь",
+        "content": {
+            "application/json": {
+                "example": {
+                    "answer": (
+                        "У 2024 році розмір <b>Bürgergeld</b> для одинокої особи "
+                        "становить <b>563 євро</b> на місяць (<code>§ 20 SGB II</code>)."
+                    ),
+                    "sources": ["sgb_ii.txt", "aufenthaltsgesetz.txt"],
+                    "has_comparison": False,
+                }
+            }
+        },
+    },
+    400: {"description": "Виявлена спроба ін'єкції в запиті"},
+    422: {"description": "Некоректний формат запиту (довжина, тип)"},
+    429: {"description": "Денний ліміт запитів вичерпано"},
+    503: {"description": "Сервіс тимчасово недоступний (ChromaDB або OpenAI)"},
+}
 from api.security import InjectionDetected, sanitize_for_log, validate_question
 from generation.generator import generate, generate_stream
 from jose import JWTError
@@ -48,19 +81,28 @@ def _check_limit(user: dict | None) -> None:
         )
 
 
-@router.post("/query", response_model=QueryResponse, summary="Правовий запит")
+@router.post(
+    "/query",
+    response_model=QueryResponse,
+    summary="Правовий запит",
+    responses=_QUERY_RESPONSES,
+    openapi_extra={"requestBody": {"content": {"application/json": {"example": _QUERY_EXAMPLE}}}},
+)
 async def handle_query(
     body: QueryRequest,
     user: dict | None = Depends(_get_optional_user),
 ) -> QueryResponse:
-    _check_limit(user)
     """Приймає правовий запит і профіль, повертає персоналізовану відповідь.
 
-    - Виконує семантичний пошук у базі правових документів
-    - Формує персоналізований промпт з урахуванням статусу та регіону
-    - Генерує відповідь через GPT-4o-mini
+    - Виконує семантичний пошук у базі правових документів (ChromaDB, hybrid BM25+vector)
+    - Формує персоналізований промпт з урахуванням правового статусу та регіону
+    - Генерує відповідь через **GPT-4o-mini** з посиланнями на конкретні §§
     - Опціонально додає порівняльний контекст Україна–Німеччина
+
+    **Авторизація:** необов'язкова. Для авторизованих користувачів діє денний ліміт запитів.
+    Анонімний доступ (Telegram-бот) — без ліміту.
     """
+    _check_limit(user)
     try:
         question = validate_question(body.question)
     except InjectionDetected as exc:
@@ -93,19 +135,32 @@ async def handle_query(
         )
 
 
-@router.post("/query/stream", summary="Streaming правовий запит (SSE)")
+@router.post(
+    "/query/stream",
+    summary="Streaming правовий запит (SSE)",
+    responses={
+        200: {"description": "Потік SSE подій", "content": {"text/event-stream": {
+            "example": 'data: {"token": "У 2024 році"}\n\ndata: {"done": true, "sources": ["sgb_ii.txt"], "has_comparison": false}\n\n'
+        }}},
+        400: {"description": "Виявлена спроба ін'єкції"},
+        429: {"description": "Денний ліміт вичерпано"},
+    },
+    openapi_extra={"requestBody": {"content": {"application/json": {"example": _QUERY_EXAMPLE}}}},
+)
 async def handle_query_stream(
     body: QueryRequest,
     user: dict | None = Depends(_get_optional_user),
 ) -> StreamingResponse:
-    _check_limit(user)
-    """Повертає відповідь потоково у форматі Server-Sent Events.
+    """Повертає відповідь потоково у форматі Server-Sent Events (SSE).
+
+    Ідеально для відображення тексту в реальному часі (ефект "друкування").
 
     Формат подій:
     - ``data: {"token": "..."}``  — черговий фрагмент тексту
     - ``data: {"done": true, "sources": [...], "has_comparison": bool}``  — кінець
     - ``data: {"error": "..."}``  — помилка
     """
+    _check_limit(user)
     try:
         question_stream = validate_question(body.question)
     except InjectionDetected as exc:

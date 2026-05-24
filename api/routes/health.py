@@ -13,18 +13,47 @@ router = APIRouter()
 logger = logging.getLogger(__name__)
 
 
-@router.get("/health", response_model=HealthResponse, summary="Перевірка стану")
+@router.get(
+    "/health",
+    response_model=HealthResponse,
+    summary="Перевірка стану",
+    tags=["Система"],
+    responses={
+        200: {
+            "content": {"application/json": {
+                "examples": {
+                    "ok": {"summary": "Всі сервіси доступні", "value": {"status": "ok", "chroma": "ok", "openai": "ok"}},
+                    "degraded": {"summary": "ChromaDB недоступний", "value": {"status": "degraded", "chroma": "error: Connection refused", "openai": "ok"}},
+                }
+            }}
+        }
+    },
+)
 async def health_check() -> HealthResponse:
-    """Перевіряє доступність ChromaDB та наявність OpenAI API ключа."""
+    """Перевіряє доступність ChromaDB та наявність OpenAI API ключа.
+
+    Повертає `status: ok` тільки якщо обидва сервіси доступні.
+    При деградації повертає `status: degraded` з деталями про несправний компонент.
+    """
     chroma_status = _check_chroma()
     openai_status = _check_openai()
     overall = "ok" if chroma_status == "ok" and openai_status == "ok" else "degraded"
     return HealthResponse(status=overall, chroma=chroma_status, openai=openai_status)
 
 
-@router.post("/admin/reindex", response_model=ReindexResponse, summary="Повне переіндексування")
+@router.post(
+    "/admin/reindex",
+    response_model=ReindexResponse,
+    summary="Повне переіндексування",
+    tags=["Адміністрування"],
+)
 async def reindex() -> ReindexResponse:
-    """Запускає повне переіндексування всіх документів у ChromaDB."""
+    """Запускає повне переіндексування всіх документів у ChromaDB.
+
+    Довготривала операція (кілька хвилин для великого корпусу).
+    Видаляє та заново створює всі векторні колекції.
+    Використовуйте тільки при пошкодженні індексу або після зміни моделі embeddings.
+    """
     import asyncio
     loop = asyncio.get_event_loop()
     try:
@@ -47,11 +76,13 @@ async def reindex() -> ReindexResponse:
     "/admin/refresh-data",
     response_model=RefreshDataResponse,
     summary="Оновлення даних + переіндексація",
+    tags=["Адміністрування"],
 )
 async def refresh_data() -> RefreshDataResponse:
     """Завантажує оновлені правові документи та переіндексує змінені файли.
 
     Не блокує інші запити — виконується у thread pool.
+    Порівнює SHA256 файлів з попереднім станом — переіндексує лише змінені.
     Повертає список оновлених файлів та кількість нових чанків.
     """
     import asyncio

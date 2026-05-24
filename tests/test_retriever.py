@@ -52,7 +52,7 @@ class TestRetriever:
 
         with (
             patch("search.retriever._get_client", return_value=mock_chroma_client),
-            patch("search.retriever._get_model", return_value=mock_model),
+            patch("search.retriever._get_embedding_model", return_value=mock_model),
         ):
             from search.retriever import retrieve
 
@@ -75,7 +75,7 @@ class TestRetriever:
 
         with (
             patch("search.retriever._get_client", return_value=mock_chroma_client),
-            patch("search.retriever._get_model", return_value=mock_model),
+            patch("search.retriever._get_embedding_model", return_value=mock_model),
         ):
             from search.retriever import retrieve
 
@@ -100,7 +100,7 @@ class TestRetriever:
 
         with (
             patch("search.retriever._get_client", return_value=mock_chroma_client),
-            patch("search.retriever._get_model", return_value=mock_model),
+            patch("search.retriever._get_embedding_model", return_value=mock_model),
         ):
             from search.retriever import retrieve
 
@@ -121,7 +121,7 @@ class TestRetriever:
 
         with (
             patch("search.retriever._get_client", return_value=mock_chroma_client),
-            patch("search.retriever._get_model", return_value=mock_model),
+            patch("search.retriever._get_embedding_model", return_value=mock_model),
         ):
             from search.retriever import retrieve
 

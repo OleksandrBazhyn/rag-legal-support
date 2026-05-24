@@ -21,3 +21,4 @@ dist/
 .idea/
 .vscode/
 *.swp
+data/.index_state.json

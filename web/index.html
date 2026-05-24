@@ -304,7 +304,6 @@
       transition: all .2s; flex-shrink: 0; white-space: nowrap;
     }
     .theme-btn:hover { background: var(--surface-3); border-color: var(--accent); color: var(--accent); }
-    .theme-btn .theme-icon { font-size: .95rem; }
 
     .user-chip {
       display: flex; align-items: center; gap: .45rem;
@@ -356,7 +355,6 @@
       transition: all .2s; width: 100%;
     }
     .action-btn:hover { border-color: var(--accent); background: var(--surface-3); color: var(--accent); }
-    .action-btn .icon { font-size: .92rem; }
 
     .sidebar-footer { margin-top: auto; padding: .8rem 1rem; font-size: .62rem; color: var(--text-3); border-top: 1px solid var(--border-2); line-height: 1.65; }
 
@@ -365,8 +363,6 @@
     .messages { flex: 1; overflow-y: auto; padding: 2rem 2.5rem; display: flex; flex-direction: column; gap: 1.25rem; scroll-behavior: smooth; }
 
     .welcome { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 1.2rem; padding: 2rem; animation: fadeIn .5s ease; }
-    .welcome-icon { font-size: 3.8rem; line-height: 1; filter: drop-shadow(0 0 24px var(--accent-glow)); animation: float 4.5s ease-in-out infinite; }
-    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
     .welcome h2 { font-size: 1.55rem; font-weight: 800; letter-spacing: -.02em; color: var(--text); }
     [data-theme="dark"] .welcome h2 {
       background: linear-gradient(135deg,#fff 0%,#8ab8ff 60%,#c8a0ff 100%);
@@ -389,7 +385,7 @@
     @keyframes fadeIn { from{opacity:0} to{opacity:1} }
 
     .avatar { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; margin-top: 3px; }
-    .msg.bot .avatar { background: linear-gradient(135deg, var(--accent), var(--accent-d)); box-shadow: 0 0 14px var(--accent-glow); font-size: 1rem; }
+    .msg.bot .avatar { background: linear-gradient(135deg, var(--accent), var(--accent-d)); box-shadow: 0 0 14px var(--accent-glow); font-size: .75rem; color: #fff; }
     .msg.user .avatar { background: var(--surface-2); border: 1px solid var(--border); color: var(--text-2); }
 
     .bubble { padding: .8rem 1.05rem; border-radius: var(--radius); line-height: 1.78; font-size: .875rem; position: relative; transition: background .3s, border-color .3s; }
@@ -406,7 +402,7 @@
     .source-tag { font-size: .68rem; padding: .17rem .52rem; background: var(--surface-2); border: 1px solid var(--border); border-radius: 4px; color: var(--text-2); }
     .copy-btn { margin-left: auto; background: none; border: none; color: var(--text-3); font-size: .7rem; cursor: pointer; display: flex; align-items: center; gap: .3rem; padding: .2rem .45rem; border-radius: 5px; transition: color .2s, background .2s; }
     .copy-btn:hover { color: var(--accent); background: var(--surface-2); }
-    .comparison-tag { font-size: .68rem; padding: .17rem .6rem; background: rgba(255,213,0,.12); color: #b8860b; border: 1px solid rgba(255,213,0,.3); border-radius: 20px; }
+    .comparison-tag { font-size: .68rem; padding: .17rem .6rem; background: rgba(255,213,0,.12); color: #b8860b; border: 1px solid rgba(255,213,0,.3); border-radius: 4px; font-weight: 600; letter-spacing: .02em; }
     [data-theme="dark"] .comparison-tag { color: #ffd500; }
 
     .thinking .bubble { display: flex; align-items: center; gap: .4rem; color: var(--text-3); font-size: .82rem; }
@@ -419,7 +415,7 @@
     textarea { flex: 1; padding: .68rem .9rem; border: 1px solid var(--border); border-radius: 12px; font-size: .875rem; font-family: inherit; background: var(--input-bg); color: var(--text); resize: none; outline: none; max-height: 160px; min-height: 42px; overflow-y: auto; line-height: 1.5; transition: border-color .25s, box-shadow .25s; }
     textarea::placeholder { color: var(--text-3); }
     textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-glow); }
-    .send-btn { width: 42px; height: 42px; border-radius: 12px; background: linear-gradient(135deg, var(--accent), var(--accent-d)); color: #fff; border: none; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 1rem; transition: transform .18s, box-shadow .18s, opacity .18s; box-shadow: 0 4px 18px var(--accent-glow); }
+    .send-btn { width: 42px; height: 42px; border-radius: 12px; background: linear-gradient(135deg, var(--accent), var(--accent-d)); color: #fff; border: none; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; transition: transform .18s, box-shadow .18s, opacity .18s; box-shadow: 0 4px 18px var(--accent-glow); }
     .send-btn:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 8px 24px var(--accent-glow); }
     .send-btn:active:not(:disabled) { transform: scale(.92); }
     .send-btn:disabled { opacity: .4; cursor: not-allowed; box-shadow: none; }
@@ -434,9 +430,8 @@
     .modal-close { background: var(--surface-2); border: 1px solid var(--border); cursor: pointer; color: var(--text-2); font-size: 1rem; width: 28px; height: 28px; border-radius: 7px; display: flex; align-items: center; justify-content: center; transition: all .2s; }
     .modal-close:hover { background: var(--surface-3); color: var(--text); }
     .modal-body { padding: 1.1rem 1.3rem; display: flex; flex-direction: column; gap: .45rem; }
-    .proc-btn { display: flex; align-items: center; gap: .7rem; padding: .68rem .9rem; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--surface-2); color: var(--text-2); font-size: .83rem; cursor: pointer; text-align: left; transition: all .2s; width: 100%; }
+    .proc-btn { display: flex; align-items: center; padding: .68rem .9rem; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--surface-2); color: var(--text-2); font-size: .83rem; cursor: pointer; text-align: left; transition: all .2s; width: 100%; }
     .proc-btn:hover { border-color: var(--accent); background: var(--surface-3); color: var(--accent); transform: translateX(4px); }
-    .proc-btn .proc-icon { font-size: 1.05rem; }
 
     /* Sessions list */
     .sessions-list { display: flex; flex-direction: column; gap: .15rem; }
@@ -491,12 +486,11 @@
     .pkg-card:hover { border-color: var(--accent); background: var(--surface-3); transform: translateY(-2px); box-shadow: 0 8px 24px var(--accent-glow); }
     .pkg-card.popular { border-color: var(--accent); }
     .pkg-badge { position: absolute; top: .45rem; right: .45rem; font-size: .58rem; font-weight: 700; background: var(--accent); color: #fff; padding: .15rem .45rem; border-radius: 20px; }
-    .pkg-icon { font-size: 1.8rem; margin-bottom: .4rem; }
     .pkg-count { font-size: 1.3rem; font-weight: 800; color: var(--text); }
     .pkg-label { font-size: .72rem; color: var(--text-2); margin-top: .1rem; }
     .pkg-price { font-size: 1rem; font-weight: 700; color: var(--accent); margin-top: .5rem; }
     .pkg-per { font-size: .62rem; color: var(--text-3); }
-    .purchase-note { font-size: .7rem; color: var(--text-3); text-align: center; margin-top: .5rem; display: flex; align-items: center; justify-content: center; gap: .3rem; }
+    .purchase-note { font-size: .7rem; color: var(--text-3); text-align: center; margin-top: .5rem; }
 
     /* Payment processing overlay (inside modal) */
     .pay-processing { display: none; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; padding: 2rem 1rem; text-align: center; }
@@ -505,7 +499,7 @@
     @keyframes spin { to { transform: rotate(360deg); } }
     .pay-success { display: none; flex-direction: column; align-items: center; gap: .85rem; padding: 1.5rem 1rem 2rem; text-align: center; }
     .pay-success.visible { display: flex; }
-    .pay-success-icon { font-size: 3rem; animation: popIn .4s cubic-bezier(.17,.67,.35,1.3); }
+    .pay-success-icon { font-size: 2.5rem; font-weight: 300; color: var(--ok); animation: popIn .4s cubic-bezier(.17,.67,.35,1.3); line-height: 1; }
     @keyframes popIn { from{transform:scale(0);opacity:0} to{transform:scale(1);opacity:1} }
 
     /* Scrollbar */
@@ -522,7 +516,8 @@
       aside.open { transform: translateX(0); }
       .msg.user { max-width: 88%; }
       .messages { padding: 1rem 1.25rem; }
-      .theme-btn span:not(.theme-icon) { display: none; }
+      .theme-btn span { display: none; }
+      .theme-btn::after { content: attr(data-label); font-size: .78rem; font-weight: 600; }
     }
     #sidebar-backdrop { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.4); backdrop-filter: blur(4px); z-index: 89; }
     @media (max-width: 700px) { #sidebar-backdrop.open { display: block; } }
@@ -586,23 +581,22 @@
 <!-- ── App ─────────────────────────────────────────────────────────────────── -->
 <div id="app">
   <header>
-    <button class="icon-btn" id="sidebar-toggle" onclick="toggleSidebar()" title="Профіль">☰</button>
+    <button class="icon-btn" id="sidebar-toggle" onclick="toggleSidebar()" title="Профіль">&#9776;</button>
     <div class="flag"><div class="t"></div><div class="b"></div></div>
     <div class="header-title">
       <h1>Правова підтримка · Українці в Німеччині</h1>
       <p>RAG-система на основі актуальних законів ФРН</p>
     </div>
     <div class="header-actions">
-      <button class="theme-btn" onclick="cycleTheme()" id="theme-btn" title="Змінити тему">
-        <span class="theme-icon" id="theme-icon">🌙</span>
+      <button class="theme-btn" onclick="cycleTheme()" id="theme-btn" title="Змінити тему" data-label="Темна">
         <span id="theme-label">Темна</span>
       </button>
       <div class="user-chip">
         <div class="avatar-sm" id="user-avatar">?</div>
         <span id="user-name">…</span>
       </div>
-      <button class="icon-btn" onclick="clearChat()" title="Нова розмова">🗑</button>
-      <button class="icon-btn" onclick="logout()" title="Вийти">⎋</button>
+      <button class="icon-btn" onclick="clearChat()" title="Нова розмова" style="font-size:.7rem;font-weight:700">+</button>
+      <button class="icon-btn" onclick="logout()" title="Вийти" style="font-size:.75rem;font-weight:700">&#8594;</button>
     </div>
   </header>
 
@@ -613,19 +607,19 @@
         <div class="usage-meter" id="usage-meter" style="display:none">
           <div class="usage-label"><span>Запити сьогодні</span><b id="usage-text">—</b></div>
           <div class="usage-track"><div class="usage-fill" id="usage-fill" style="width:0%"></div></div>
-          <button id="usage-buy-btn" onclick="openPurchaseModal()" style="display:none;margin-top:.5rem;width:100%;padding:.4rem;font-size:.72rem;font-weight:600;border:1px solid var(--accent);border-radius:8px;background:var(--accent-glow);color:var(--accent);cursor:pointer;transition:all .2s" onmouseover="this.style.background='var(--accent)';this.style.color='#fff'" onmouseout="this.style.background='var(--accent-glow)';this.style.color='var(--accent)'">⚡ Поповнити запити</button>
+          <button id="usage-buy-btn" onclick="openPurchaseModal()" style="display:none;margin-top:.5rem;width:100%;padding:.4rem;font-size:.72rem;font-weight:600;border:1px solid var(--accent);border-radius:8px;background:var(--accent-glow);color:var(--accent);cursor:pointer;transition:all .2s" onmouseover="this.style.background='var(--accent)';this.style.color='#fff'" onmouseout="this.style.background='var(--accent-glow)';this.style.color='var(--accent)'">Поповнити запити</button>
         </div>
         <div class="field" style="margin-top:.75rem">
-          <label for="legal-status">⚖️ Правовий статус</label>
+          <label for="legal-status">Правовий статус</label>
           <select id="legal-status" onchange="saveProfile()">
-            <option value="temporary_protection">🛡 Тимчасовий захист (§ 24)</option>
-            <option value="residence_permit">📄 Дозвіл на проживання</option>
-            <option value="asylum_seeker">📋 Заявник на притулок</option>
-            <option value="unknown" selected>❓ Не знаю</option>
+            <option value="temporary_protection">Тимчасовий захист (§ 24)</option>
+            <option value="residence_permit">Дозвіл на проживання</option>
+            <option value="asylum_seeker">Заявник на притулок</option>
+            <option value="unknown" selected>Не визначено</option>
           </select>
         </div>
         <div class="field">
-          <label for="region">📍 Федеральна земля</label>
+          <label for="region">Федеральна земля</label>
           <select id="region" onchange="saveProfile()">
             <option value="unknown" selected>Не вказано</option>
             <option value="Bayern">Bayern (Баварія)</option>
@@ -640,7 +634,7 @@
           </select>
         </div>
         <div class="field">
-          <label for="category">🎯 Тема запиту</label>
+          <label for="category">Тема запиту</label>
           <select id="category" onchange="saveProfile()">
             <option value="other" selected>Загальний</option>
             <option value="residence">Право на проживання</option>
@@ -651,11 +645,11 @@
           </select>
         </div>
         <div class="field">
-          <label for="language">🌐 Мова відповіді</label>
+          <label for="language">Мова відповіді</label>
           <select id="language" onchange="saveProfile()">
-            <option value="uk" selected>🇺🇦 Українська</option>
-            <option value="de">🇩🇪 Deutsch</option>
-            <option value="en">🇬🇧 English</option>
+            <option value="uk" selected>Українська</option>
+            <option value="de">Deutsch</option>
+            <option value="en">English</option>
           </select>
         </div>
       </div>
@@ -668,8 +662,8 @@
       <div class="sidebar-section">
         <h3>Швидкі дії</h3>
         <div class="quick-actions">
-          <button class="action-btn" onclick="openChecklist()"><span class="icon">📋</span> Генератор чеклистів</button>
-          <button class="action-btn" onclick="clearChat()"><span class="icon">🔄</span> Нова розмова</button>
+          <button class="action-btn" onclick="openChecklist()">Генератор чеклистів</button>
+          <button class="action-btn" onclick="clearChat()">Нова розмова</button>
         </div>
       </div>
       <div class="sidebar-footer">
@@ -682,7 +676,6 @@
     <div class="chat-area">
       <div class="messages" id="messages">
         <div class="welcome" id="welcome">
-          <div class="welcome-icon">⚖️</div>
           <h2>Правовий помічник для українців у Німеччині</h2>
           <p>Ставте питання про соціальні виплати, роботу, медицину, освіту, право на проживання — відповіді базуються на актуальних законах ФРН.</p>
           <div class="example-chips">
@@ -704,9 +697,9 @@
             onkeydown="handleKey(event)"></textarea>
           <div style="display:flex;justify-content:flex-end"><span id="char-count">0 / 2000</span></div>
         </div>
-        <button class="send-btn" id="send-btn" onclick="sendQuery()" title="Надіслати (Enter)">➤</button>
+        <button class="send-btn" id="send-btn" onclick="sendQuery()" title="Надіслати (Enter)">&#8594;</button>
       </div>
-      <div class="disclaimer">⚠️ Загальноінформаційна підтримка, не юридична консультація. Для вирішення конкретної ситуації зверніться до кваліфікованого юриста.</div>
+      <div class="disclaimer">Загальноінформаційна підтримка, не юридична консультація. Для вирішення конкретної ситуації зверніться до кваліфікованого юриста.</div>
     </div>
   </div>
 </div>
@@ -717,18 +710,18 @@
 <div class="modal-overlay hidden" id="checklist-modal" onclick="handleModalClick(event)">
   <div class="modal">
     <div class="modal-header">
-      <h2>📋 Генератор чеклистів</h2>
-      <button class="modal-close" onclick="closeChecklist()">✕</button>
+      <h2>Генератор чеклистів</h2>
+      <button class="modal-close" onclick="closeChecklist()">&#215;</button>
     </div>
     <div class="modal-body">
       <p style="font-size:.8rem;color:var(--text-2);margin-bottom:.3rem">Оберіть процедуру — отримаєте персоналізований список документів:</p>
-      <button class="proc-btn" onclick="runChecklist('Bürgergeld (SGB II)')"><span class="proc-icon">💰</span> Bürgergeld</button>
-      <button class="proc-btn" onclick="runChecklist('продовження або отримання Aufenthaltstitel (§24 AufenthG)')"><span class="proc-icon">🏠</span> Aufenthaltstitel / §24</button>
-      <button class="proc-btn" onclick="runChecklist('офіційного працевлаштування в Німеччині')"><span class="proc-icon">💼</span> Працевлаштування</button>
-      <button class="proc-btn" onclick="runChecklist('запису дитини до школи або Kita')"><span class="proc-icon">🎓</span> Школа / Kita</button>
-      <button class="proc-btn" onclick="runChecklist('оформлення медичного страхування (GKV)')"><span class="proc-icon">🏥</span> Медична страховка</button>
-      <button class="proc-btn" onclick="runChecklist('отримання Wohngeld (субсидія на оренду житла)')"><span class="proc-icon">🏘</span> Wohngeld</button>
-      <button class="proc-btn" onclick="runChecklist('визнання українського диплому або кваліфікації в Німеччині')"><span class="proc-icon">📜</span> Визнання диплому</button>
+      <button class="proc-btn" onclick="runChecklist('Bürgergeld (SGB II)')">Bürgergeld</button>
+      <button class="proc-btn" onclick="runChecklist('продовження або отримання Aufenthaltstitel (§24 AufenthG)')">Aufenthaltstitel / § 24</button>
+      <button class="proc-btn" onclick="runChecklist('офіційного працевлаштування в Німеччині')">Працевлаштування</button>
+      <button class="proc-btn" onclick="runChecklist('запису дитини до школи або Kita')">Школа / Kita</button>
+      <button class="proc-btn" onclick="runChecklist('оформлення медичного страхування (GKV)')">Медична страховка (GKV)</button>
+      <button class="proc-btn" onclick="runChecklist('отримання Wohngeld (субсидія на оренду житла)')">Wohngeld</button>
+      <button class="proc-btn" onclick="runChecklist('визнання українського диплому або кваліфікації в Німеччині')">Визнання диплому</button>
     </div>
   </div>
 </div>
@@ -737,14 +730,13 @@
 <div class="modal-overlay hidden" id="purchase-modal" onclick="handlePurchaseModalClick(event)">
   <div class="modal" style="max-width:420px">
     <div class="modal-header" id="purchase-modal-header">
-      <h2>⚡ Додаткові запити</h2>
-      <button class="modal-close" onclick="closePurchaseModal()">✕</button>
+      <h2>Додаткові запити</h2>
+      <button class="modal-close" onclick="closePurchaseModal()">&#215;</button>
     </div>
     <div class="modal-body" id="purchase-body">
       <p style="font-size:.82rem;color:var(--text-2);margin-bottom:.25rem">Ваш денний ліміт вичерпано. Придбайте додаткові запити — вони не скидаються щодня.</p>
       <div class="purchase-packages">
         <div class="pkg-card" onclick="buyPackage(10)">
-          <div class="pkg-icon">✨</div>
           <div class="pkg-count">+10</div>
           <div class="pkg-label">запитів</div>
           <div class="pkg-price">€2.99</div>
@@ -752,14 +744,13 @@
         </div>
         <div class="pkg-card popular" onclick="buyPackage(50)">
           <div class="pkg-badge">Вигідно</div>
-          <div class="pkg-icon">🚀</div>
           <div class="pkg-count">+50</div>
           <div class="pkg-label">запитів</div>
           <div class="pkg-price">€9.99</div>
           <div class="pkg-per">€0.20 / запит</div>
         </div>
       </div>
-      <p class="purchase-note">🔒 Демонстраційний режим — оплата не стягується</p>
+      <p class="purchase-note">Демонстраційний режим — оплата не стягується</p>
     </div>
     <!-- Processing state -->
     <div class="pay-processing" id="pay-processing">
@@ -768,8 +759,8 @@
     </div>
     <!-- Success state -->
     <div class="pay-success" id="pay-success">
-      <div class="pay-success-icon">✅</div>
-      <div style="font-size:1.05rem;font-weight:700;color:var(--text)">Запити додано!</div>
+      <div class="pay-success-icon">&#10003;</div>
+      <div style="font-size:1.05rem;font-weight:700;color:var(--text)">Запити додано</div>
       <div style="font-size:.82rem;color:var(--text-2)" id="pay-success-text"></div>
       <button class="auth-btn" style="width:100%;max-width:200px" onclick="closePurchaseModal()">Продовжити</button>
     </div>
@@ -784,7 +775,7 @@ let chatHistory = [];
 const MAX_HISTORY = 6;
 
 /* ── Sessions ────────────────────────────────────────────────────────────── */
-let sessions = [];          // [{id, title, ts, html, history}]
+let sessions = [];
 let currentSessionId = null;
 
 function genId() { return Date.now().toString(36)+Math.random().toString(36).slice(2,6); }
@@ -799,7 +790,6 @@ function loadSessions() {
 
 function welcomeHTML() {
   return `<div class="welcome" id="welcome">
-    <div class="welcome-icon">⚖️</div>
     <h2>Правовий помічник для українців у Німеччині</h2>
     <p>Ставте питання про соціальні виплати, роботу, медицину, освіту, право на проживання — відповіді базуються на актуальних законах ФРН.</p>
     <div class="example-chips">
@@ -815,7 +805,7 @@ function welcomeHTML() {
 
 function saveCurrentSession() {
   const msgsEl = document.getElementById('messages');
-  if (!msgsEl.querySelector('.msg')) return; // нема повідомлень — нічого зберігати
+  if (!msgsEl.querySelector('.msg')) return;
   if (!currentSessionId) currentSessionId = genId();
   const firstBubble = msgsEl.querySelector('.msg.user .bubble');
   const title = firstBubble ? firstBubble.textContent.slice(0,55).trim() : 'Розмова';
@@ -842,7 +832,7 @@ function renderSessions() {
     return `<div class="session-item${active}" onclick="openSession('${s.id}')">
       <div class="session-title">${escHtml(s.title)}</div>
       <div class="session-meta"><span>${dateStr}</span></div>
-      <button class="session-del" onclick="deleteSession(event,'${s.id}')" title="Видалити">✕</button>
+      <button class="session-del" onclick="deleteSession(event,'${s.id}')" title="Видалити">&#215;</button>
     </div>`;
   }).join('');
 }
@@ -874,16 +864,17 @@ function deleteSession(e, id) {
 /* ── Theme ───────────────────────────────────────────────────────────────── */
 const THEMES = ['dark','light','system'];
 const THEME_META = {
-  dark:   { icon: '🌙', label: 'Темна' },
-  light:  { icon: '☀️', label: 'Світла' },
-  system: { icon: '💻', label: 'Системна' },
+  dark:   { label: 'Темна' },
+  light:  { label: 'Світла' },
+  system: { label: 'Системна' },
 };
 let _themeIdx = 0;
 
 function applyTheme(theme) {
   document.documentElement.dataset.theme = theme;
   const m = THEME_META[theme];
-  document.getElementById('theme-icon').textContent = m.icon;
+  const btn = document.getElementById('theme-btn');
+  if (btn) btn.dataset.label = m.label;
   document.getElementById('theme-label').textContent = m.label;
   try { localStorage.setItem('rag_theme', theme); } catch {}
 }
@@ -992,6 +983,7 @@ async function saveProfile() {
   const p=getProfile();
   try { await fetch(`${API}/auth/profile`,{method:'PUT',headers:{'Content-Type':'application/json',Authorization:`Bearer ${_token}`},body:JSON.stringify(p)}); } catch{}
 }
+
 /* ── Purchase ────────────────────────────────────────────────────────────── */
 function openPurchaseModal() {
   document.getElementById('purchase-body').style.display = '';
@@ -1007,12 +999,10 @@ function handlePurchaseModalClick(e) { if(e.target===e.currentTarget) closePurch
 
 async function buyPackage(amount) {
   if (!_token) return;
-  // Показуємо анімацію оплати
   document.getElementById('purchase-body').style.display = 'none';
   document.getElementById('purchase-modal-header').style.display = 'none';
   document.getElementById('pay-processing').classList.add('visible');
 
-  // Імітуємо затримку платіжної системи
   await new Promise(r => setTimeout(r, 1800));
 
   try {
@@ -1024,7 +1014,6 @@ async function buyPackage(amount) {
     const d = await r.json();
     if (!r.ok) throw new Error(d.detail || 'Помилка');
 
-    // Успіх
     document.getElementById('pay-processing').classList.remove('visible');
     document.getElementById('pay-success-text').textContent =
       `+${amount} запитів зараховано. Доступно: ${d.usage.remaining}`;
@@ -1051,7 +1040,7 @@ function updateUsageMeter(usage) {
   const pct = Math.min(100, Math.round(usage.count / effective * 100));
   fill.style.width = pct + '%';
   fill.className = 'usage-fill' + (pct>=100?' limit':pct>=80?' warn':'');
-  const bonusStr = usage.bonus ? ` +${usage.bonus}🎁` : '';
+  const bonusStr = usage.bonus ? ` +${usage.bonus}` : '';
   text.textContent = `${usage.count} / ${usage.limit}${bonusStr}`;
   if (buyBtn) buyBtn.style.display = pct >= 80 ? 'block' : 'none';
 }
@@ -1085,7 +1074,7 @@ function escAttr(s){return String(s).replace(/"/g,'&quot;').replace(/'/g,'&#39;'
 function scrollBottom(){const m=document.getElementById('messages');m.scrollTop=m.scrollHeight;}
 function hideWelcome(){const w=document.getElementById('welcome');if(w)w.style.display='none';}
 function updateCharCount(el){const c=document.getElementById('char-count');if(!c)return;const n=el.value.length;c.textContent=`${n}/2000`;c.style.color=n>1800?'#ef4444':n>1500?'#f59e0b':'var(--text-3)';}
-function copyText(btn){navigator.clipboard.writeText(btn.dataset.text||'').then(()=>{const o=btn.innerHTML;btn.innerHTML='✓ Скопійовано';btn.style.color='var(--ok)';setTimeout(()=>{btn.innerHTML=o;btn.style.color='';},1800);});}
+function copyText(btn){navigator.clipboard.writeText(btn.dataset.text||'').then(()=>{const o=btn.innerHTML;btn.innerHTML='Скопійовано';btn.style.color='var(--ok)';setTimeout(()=>{btn.innerHTML=o;btn.style.color='';},1800);});}
 
 /* ── Chat ────────────────────────────────────────────────────────────────── */
 function addUserMsg(text){
@@ -1101,7 +1090,7 @@ async function sendQuery(questionOverride){
   const question=(questionOverride||ta.value).trim();if(!question)return;
   ta.value='';autoResize(ta);
   const btn=document.getElementById('send-btn');btn.disabled=true;
-  if(!currentSessionId) currentSessionId=genId(); // нова сесія при першому запиті
+  if(!currentSessionId) currentSessionId=genId();
   hideWelcome();addUserMsg(question);
   chatHistory.push({role:'user',content:question});
   if(chatHistory.length>MAX_HISTORY)chatHistory.splice(0,2);
@@ -1111,7 +1100,7 @@ async function sendQuery(questionOverride){
   const contentDiv=document.createElement('div');contentDiv.className='answer-content';
   contentDiv.innerHTML=`<span style="color:var(--text-3);font-size:.82rem">Шукаю відповідь… <span class="dots"><span></span><span></span><span></span></span></span>`;
   const bubbleDiv=document.createElement('div');bubbleDiv.className='bubble';
-  bubbleDiv.appendChild(contentDiv);msgDiv.innerHTML=`<div class="avatar">⚖️</div>`;
+  bubbleDiv.appendChild(contentDiv);msgDiv.innerHTML='<div class="avatar">§</div>';
   msgDiv.appendChild(bubbleDiv);msgs.appendChild(msgDiv);scrollBottom();
 
   let rawAnswer='';
@@ -1123,7 +1112,7 @@ async function sendQuery(questionOverride){
     if(!res.ok){
       const e=await res.json().catch(()=>({detail:res.statusText}));
       if(res.status===429){
-        msgDiv.remove(); // прибираємо індикатор "шукаю..."
+        msgDiv.remove();
         btn.disabled=false;
         openPurchaseModal();
         return;
@@ -1142,19 +1131,19 @@ async function sendQuery(questionOverride){
         if(data.token){if(!rawAnswer)contentDiv.innerHTML='';rawAnswer+=data.token;contentDiv.innerHTML=markdownToHtml(rawAnswer);scrollBottom();}
         if(data.done){
           chatHistory.push({role:'assistant',content:rawAnswer});
-          saveCurrentSession(); // автозбереження після кожної відповіді
+          saveCurrentSession();
           if(data.usage) updateUsageMeter(data.usage);
           else if(_token){fetch(`${API}/auth/me`,{headers:{Authorization:`Bearer ${_token}`}}).then(r=>r.ok?r.json():null).then(u=>u&&updateUsageMeter(u.usage)).catch(()=>{});}
           let meta='';
-          if(data.has_comparison)meta+=`<span class="comparison-tag">🇺🇦🇩🇪 Порівняльний контекст</span>`;
-          if(data.sources?.length>0)meta+=data.sources.map(src=>{const label=src.split(/[/\\]/).pop().replace(/\.[^.]+$/,'');return`<span class="source-tag" title="${escAttr(src)}">📄 ${escHtml(label)}</span>`;}).join('');
-          meta+=`<button class="copy-btn" onclick="copyText(this)" data-text="${escAttr(rawAnswer)}">⎘ Копіювати</button>`;
+          if(data.has_comparison)meta+=`<span class="comparison-tag">UA &#8594; DE</span>`;
+          if(data.sources?.length>0)meta+=data.sources.map(src=>{const label=src.split(/[/\\]/).pop().replace(/\.[^.]+$/,'');return`<span class="source-tag" title="${escAttr(src)}">${escHtml(label)}</span>`;}).join('');
+          meta+=`<button class="copy-btn" onclick="copyText(this)" data-text="${escAttr(rawAnswer)}">Копіювати</button>`;
           const metaDiv=document.createElement('div');metaDiv.className='bubble-meta';metaDiv.innerHTML=meta;
           bubbleDiv.appendChild(metaDiv);scrollBottom();
         }
       }
     }
-  }catch(err){contentDiv.innerHTML=`<span style="color:var(--err)">⚠️ ${escHtml(err.message)}</span>`;scrollBottom();}
+  }catch(err){contentDiv.innerHTML=`<span style="color:var(--err)">${escHtml(err.message)}</span>`;scrollBottom();}
   finally{btn.disabled=false;}
 }
 
@@ -1164,8 +1153,8 @@ function handleKey(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendQu
 function autoResize(el){el.style.height='auto';el.style.height=Math.min(el.scrollHeight,160)+'px';}
 
 function clearChat(){
-  saveCurrentSession();        // зберегти поточну розмову
-  currentSessionId = genId();  // нова сесія
+  saveCurrentSession();
+  currentSessionId = genId();
   chatHistory=[];
   document.getElementById('messages').innerHTML=welcomeHTML();
   renderSessions();

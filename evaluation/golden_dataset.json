@@ -9,6 +9,7 @@
       "query_category": "social_benefits",
       "language": "uk"
     },
+    "ground_truth": "У 2024 році розмір Bürgergeld для одинокої особи (Regelbedarfsstufe 1) становить 563 євро на місяць. Ця сума встановлена відповідно до §20 SGB II та регулярно індексується. Окремо відшкодовуються витрати на житло (Kosten der Unterkunft) та опалення.",
     "expected_keywords": ["563", "Bürgergeld", "SGB II", "Regelbedarfsstufe"],
     "expected_sources_contain": ["sgb", "buergergeld", "sozial"]
   },
@@ -22,6 +23,7 @@
       "query_category": "social_benefits",
       "language": "uk"
     },
+    "ground_truth": "Для оформлення Bürgergeld необхідно звернутися до Jobcenter з такими документами: паспорт або посвідчення особи, Aufenthaltstitel (для власників §24 — Aufenthaltserlaubnis), підтвердження реєстрації місця проживання (Anmeldebescheinigung), банківські реквізити (IBAN), договір оренди (Mietvertrag) та підтвердження доходів (якщо є).",
     "expected_keywords": ["Jobcenter", "Antrag", "Ausweis", "Aufenthaltstitel", "Kontoauszug"],
     "expected_sources_contain": ["sgb", "buergergeld", "sozial"]
   },
@@ -35,7 +37,8 @@
       "query_category": "social_benefits",
       "language": "uk"
     },
-    "expected_keywords": ["§24", "тимчасовий захист", "Aufenthaltsgestattung", "Jobcenter"],
+    "ground_truth": "Так. Особи з тимчасовим захистом за §24 AufenthG мають право на Bürgergeld відповідно до SGB II, оскільки §7 Abs.1 SGB II включає їх до кола отримувачів. Для цього потрібно звернутися до місцевого Jobcenter, бути зареєстрованим за місцем проживання та бути працездатним (erwerbsfähig). На відміну від шукачів притулку, власники §24 отримують повний обсяг виплат SGB II, а не обмежений пакет за AsylbLG.",
+    "expected_keywords": ["§24", "тимчасовий захист", "Jobcenter", "SGB II"],
     "expected_sources_contain": ["sgb", "aufenthalt", "asyl"]
   },
   {
@@ -48,6 +51,7 @@
       "query_category": "social_benefits",
       "language": "uk"
     },
+    "ground_truth": "Витрати на житло в рамках SGB II (Kosten der Unterkunft, KdU) відшкодовуються відповідно до §22 SGB II у «розумному» розмірі (angemessene Kosten). Це включає оренду (Kaltmiete), комунальні витрати (Nebenkosten) та опалення (Heizkosten). Розміри «розумної» орендної плати визначаються кожним містом/районом окремо через так звані Mietspiegel або власні таблиці Jobcenter. Якщо фактична оренда перевищує ліміт, Jobcenter може вимагати скорочення витрат.",
     "expected_keywords": ["Kosten der Unterkunft", "KdU", "Miete", "Heizkosten"],
     "expected_sources_contain": ["sgb", "unterkunft", "wohn"]
   },
@@ -61,7 +65,8 @@
       "query_category": "residence",
       "language": "uk"
     },
-    "expected_keywords": ["§24", "AufenthG", "Massenzustrom", "Ukraina", "Aufenthaltserlaubnis"],
+    "ground_truth": "Aufenthaltserlaubnis §24 AufenthG — це дозвіл на тимчасове перебування, що видається на підставі Директиви ЄС 2001/55/EG (тимчасовий захист). В Україні він був активований Рішенням Ради ЄС 2022/382 від 4 березня 2022 року. На нього мають право громадяни України та члени їх сімей, що виїхали після 24 лютого 2022 року. Дозвіл надає право на проживання, роботу, Bürgergeld та GKV-страхування без окремого дозволу.",
+    "expected_keywords": ["§24", "AufenthG", "Massenzustrom", "Aufenthaltserlaubnis"],
     "expected_sources_contain": ["aufenthalt", "aufenthg"]
   },
   {
@@ -74,6 +79,7 @@
       "query_category": "residence",
       "language": "uk"
     },
+    "ground_truth": "Для продовження дозволу на проживання §24 необхідно звернутися до Ausländerbehörde за місцем реєстрації до закінчення терміну дії документа (бажано за 4–6 тижнів). Потрібно записатися на прийом (Termin), подати заяву (Antrag auf Verlängerung), актуальний паспорт та фото. Рішення про продовження залежить від чинності директиви ЄС 2001/55/EG і рішення федерального уряду. На час очікування рішення видається Fiktionsbescheinigung.",
     "expected_keywords": ["Verlängerung", "Ausländerbehörde", "Antrag", "Termin"],
     "expected_sources_contain": ["aufenthalt", "aufenthg"]
   },
@@ -87,8 +93,9 @@
       "query_category": "residence",
       "language": "uk"
     },
+    "ground_truth": "Тимчасовий захист (§24 AufenthG) — колективний статус, що надається автоматично без індивідуального розгляду, на підставі рішення ЄС. Він дає повні соціальні права (SGB II, GKV, право на роботу). Статус біженця (§3 AsylG / Genfer Flüchtlingskonvention) — індивідуальний, надається BAMF після розгляду справи. Субсидіарний захист (§4 AsylG) — для тих, хто не відповідає критеріям ГФК, але загрожує серйозна шкода. Під час розгляду шукачі притулку отримують обмежені виплати за AsylbLG, а не SGB II.",
     "expected_keywords": ["§24", "§3", "AsylG", "Genfer", "Flüchtlingsstatus", "subsidiär"],
-    "expected_sources_contain": ["asyl", "aufenthalt", "fluechtling"]
+    "expected_sources_contain": ["asyl", "aufenthalt"]
   },
   {
     "id": "res_04",
@@ -100,6 +107,7 @@
       "query_category": "residence",
       "language": "uk"
     },
+    "ground_truth": "Відповідно до §26 Abs.4 AufenthG, власник §24 може подати заяву на Niederlassungserlaubnis після 5 років безперервного законного проживання в Німеччині. Умови: достатнє знання мови (B1), підтвердження засобів існування, відсутність судимості та внески до пенсійного страхування. Слід враховувати, що час перебування за §24 може зараховуватися, якщо статус був отриманий відповідно до §26 Abs.1 S.3.",
     "expected_keywords": ["Niederlassungserlaubnis", "§26", "AufenthG", "5 Jahre"],
     "expected_sources_contain": ["aufenthalt", "aufenthg"]
   },
@@ -113,7 +121,8 @@
       "query_category": "employment",
       "language": "uk"
     },
-    "expected_keywords": ["Arbeitserlaubnis", "Arbeitsgenehmigung", "§24", "erlaubt", "berechtigt"],
+    "ground_truth": "Так. Власники §24 AufenthG мають право працювати в Німеччині без отримання окремого дозволу на роботу (Arbeitserlaubnis). Дозвіл на роботу автоматично включений до §24 відповідно до §4a Abs.2 AufenthG та Beschäftigungsverordnung (BeschV). Обмежень щодо виду роботи або галузі немає. Також дозволено самозайнятість (Selbstständigkeit).",
+    "expected_keywords": ["Arbeitserlaubnis", "§24", "erlaubt", "berechtigt", "BeschV"],
     "expected_sources_contain": ["aufenthalt", "arbeit", "beschaeftigung"]
   },
   {
@@ -126,6 +135,7 @@
       "query_category": "employment",
       "language": "uk"
     },
+    "ground_truth": "З 1 січня 2024 року мінімальна заробітна плата в Німеччині становить 12,41 євро на годину брутто відповідно до MiLoG (Mindestlohngesetz). Мінімальна зарплата поширюється на всіх працівників, включаючи іноземних громадян з дозволом на роботу. З 1 січня 2025 року заплановано підвищення до 12,82 євро/год. Для деяких галузей (будівництво, клінінг) діють вищі тарифні ставки за галузевими угодами.",
     "expected_keywords": ["Mindestlohn", "12,41", "MiLoG", "Euro"],
     "expected_sources_contain": ["mindestlohn", "milog", "arbeit"]
   },
@@ -139,8 +149,9 @@
       "query_category": "employment",
       "language": "uk"
     },
+    "ground_truth": "Kurzarbeitergeld (KUG) — це виплата від Bundesagentur für Arbeit (SGB III), що відшкодовує частину втраченого заробітку при скороченому робочому часі. Розмір: 60% від чистої різниці заробітку (67% для батьків з дітьми). Право на KUG мають усі офіційно зайняті працівники, в тому числі власники §24, якщо вони перебувають у трудових відносинах не менше 4 тижнів і роботодавець подав відповідну заяву до Arbeitsagentur.",
     "expected_keywords": ["Kurzarbeitergeld", "SGB III", "Arbeitsagentur", "60%", "67%"],
-    "expected_sources_contain": ["sgb", "arbeit", "kurzarbeit"]
+    "expected_sources_contain": ["sgb", "arbeit"]
   },
   {
     "id": "hlth_01",
@@ -152,8 +163,9 @@
       "query_category": "healthcare",
       "language": "uk"
     },
-    "expected_keywords": ["GKV", "Krankenversicherung", "AOK", "TK", "Barmer", "Beitrag"],
-    "expected_sources_contain": ["kranken", "sgb", "gesundheit"]
+    "ground_truth": "Власники §24 автоматично включаються до системи GKV (gesetzliche Krankenversicherung) відповідно до §5 SGB V при отриманні Bürgergeld або працевлаштуванні. Для реєстрації потрібно звернутися до будь-якої GKV-каси (AOK, TK, Barmer, DAK тощо) з §24-посвідченням та Anmeldebescheinigung. Внески при Bürgergeld оплачує Jobcenter. При роботі внески діляться між працівником (~7,3%) та роботодавцем (~7,3%).",
+    "expected_keywords": ["GKV", "Krankenversicherung", "AOK", "TK", "Beitrag"],
+    "expected_sources_contain": ["kranken", "sgb"]
   },
   {
     "id": "hlth_02",
@@ -165,8 +177,9 @@
       "query_category": "healthcare",
       "language": "uk"
     },
-    "expected_keywords": ["Leistungen", "Arzt", "Krankenhaus", "Medikamente", "Zuzahlung"],
-    "expected_sources_contain": ["kranken", "sgb", "leistung"]
+    "ground_truth": "GKV для власників §24 покриває: амбулаторне та стаціонарне лікування (Arzt, Krankenhaus), рецептурні ліки (Medikamente) із доплатою 10 євро, профілактичні обстеження (Vorsorge), лікування зубів (базове), психотерапію (Psychotherapie), послуги акушерів та пологи. За §5 SGB V власники §24 прирівнюються до звичайних застрахованих і мають повний обсяг стандартних послуг GKV.",
+    "expected_keywords": ["Leistungen", "Arzt", "Krankenhaus", "Medikamente", "GKV"],
+    "expected_sources_contain": ["kranken", "sgb"]
   },
   {
     "id": "hlth_03",
@@ -178,8 +191,9 @@
       "query_category": "healthcare",
       "language": "uk"
     },
-    "expected_keywords": ["Zahnbehandlung", "Zahnarzt", "Bonus", "festsetzungsfähig", "GKV"],
-    "expected_sources_contain": ["kranken", "zahn", "sgb"]
+    "ground_truth": "GKV покриває базове стоматологічне лікування (Zahnbehandlung) відповідно до §28 SGB V: огляди, лікування карієсу, видалення зубів, рентген. Протезування (Zahnersatz) покривається частково: стандартний базовий протез (festsetzungsfähiger Betrag) з доплатою 50% пацієнтом; при регулярних профілактичних відвідуваннях (Bonusheft) доплата знижується до 35–40%. Естетичні процедури GKV не покриває.",
+    "expected_keywords": ["Zahnbehandlung", "Zahnarzt", "Bonus", "GKV", "Zahnersatz"],
+    "expected_sources_contain": ["kranken", "sgb"]
   },
   {
     "id": "edu_01",
@@ -191,6 +205,7 @@
       "query_category": "education",
       "language": "uk"
     },
+    "ground_truth": "В Німеччині діє обов'язкове шкільне навчання (Schulpflicht) для всіх дітей, які проживають на території країни, включаючи власників §24. Для запису (Anmeldung) потрібно звернутися до найближчої школи за місцем проживання з документами: свідоцтво про народження, паспорт дитини, §24-посвідчення, підтвердження реєстрації. Для дітей без знання мови передбачені спеціальні класи мовної інтеграції (Willkommensklasse або DaZ — Deutsch als Zweitsprache).",
     "expected_keywords": ["Schulpflicht", "Anmeldung", "Schule", "Willkommensklasse", "DaZ"],
     "expected_sources_contain": ["schul", "bildung", "kind"]
   },
@@ -204,6 +219,7 @@
       "query_category": "education",
       "language": "uk"
     },
+    "ground_truth": "Так. Власники §24 AufenthG мають право на участь в Integrationskurs, що організовується BAMF (Bundesamt für Migration und Flüchtlinge). Курс включає 600 годин мовного навчання (рівень B1) та 100 годин орієнтаційного курсу (Orientierungskurs). Участь є безкоштовною або з мінімальним внеском (залежно від доходу). Для запису потрібно отримати Berechtigungsschein від Ausländerbehörde або Jobcenter.",
     "expected_keywords": ["Integrationskurs", "BAMF", "kostenlos", "Sprachkurs", "berechtigt"],
     "expected_sources_contain": ["integration", "bamf", "sprach"]
   },
@@ -217,7 +233,8 @@
       "query_category": "education",
       "language": "uk"
     },
-    "expected_keywords": ["Anerkennung", "Berufsabschluss", "anabin", "KMK", "IHK", "Bewerbung"],
+    "ground_truth": "Визнання іноземних кваліфікацій в Німеччині регулюється BQFG (Berufsqualifikationsfeststellungsgesetz). Процедура залежить від типу кваліфікації: регульовані професії (лікар, юрист, вчитель) — через відповідний орган землі; нерегульовані — через IHK або HWK. Перший крок: перевірити еквівалентність через anabin-базу даних або portal.make-it-in-germany.com. Безкоштовна консультація доступна в центрах IQ Netzwerk по всій Німеччині.",
+    "expected_keywords": ["Anerkennung", "BQFG", "anabin", "IHK", "Bewerbung"],
     "expected_sources_contain": ["anerkennung", "qualifikation", "bildung"]
   },
   {
@@ -230,8 +247,9 @@
       "query_category": "social_benefits",
       "language": "uk"
     },
-    "expected_keywords": ["Wohngeld", "Mietzuschuss", "Wohngeldbehörde", "Antrag"],
-    "expected_sources_contain": ["wohn", "wohngelg"]
+    "ground_truth": "Wohngeld — це державна субсидія на оренду або власне житло (Mietzuschuss або Lastenzuschuss) за WoGG (Wohngeldgesetz). Мають право особи з низьким доходом, що не отримують SGB II або SGB XII. Власники §24 можуть претендувати на Wohngeld, якщо їхній дохід перевищує межу для Bürgergeld. Розмір залежить від кількості членів домогосподарства, розміру оренди та доходу. Заява подається до Wohngeldbehörde за місцем проживання.",
+    "expected_keywords": ["Wohngeld", "Mietzuschuss", "Wohngeldbehörde", "Antrag", "WoGG"],
+    "expected_sources_contain": ["wohn"]
   },
   {
     "id": "wohn_02",
@@ -243,6 +261,7 @@
       "query_category": "social_benefits",
       "language": "uk"
     },
+    "ground_truth": "Ні. Wohngeld та Bürgergeld (SGB II) є взаємовиключними виплатами. Відповідно до §7 Abs.1 WoGG, особи що отримують SGB II або SGB XII виключені з права на Wohngeld (Ausschluss). Логіка: у SGB II вже закладено відшкодування витрат на житло (KdU). Wohngeld розрахований на тих, чий дохід вищий за межу SGB II, але все одно недостатній для покриття оренди.",
     "expected_keywords": ["Wohngeld", "SGB II", "Ausschluss", "gleichzeitig", "Bürgergeld"],
     "expected_sources_contain": ["wohn", "sgb"]
   },
@@ -256,6 +275,7 @@
       "query_category": "other",
       "language": "uk"
     },
+    "ground_truth": "Anmeldung — це обов'язкова реєстрація місця проживання (Wohnsitzanmeldung) в Німеччині. Зробити її потрібно протягом 2 тижнів після переїзду на нову адресу в Einwohnermeldeamt або Bürgeramt. Необхідні документи: паспорт або посвідчення особи, підтвердження від орендодавця (Wohnungsgeberbestätigung). Після реєстрації видається Meldebestätigung — важливий документ для отримання Bürgergeld, відкриття рахунку та інших процедур.",
     "expected_keywords": ["Anmeldung", "Einwohnermeldeamt", "Bürgeramt", "Wohnsitz", "Meldebestätigung"],
     "expected_sources_contain": ["meld", "anmeld", "einwohner"]
   }

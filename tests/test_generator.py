@@ -13,9 +13,6 @@ from api.models import UserProfile, LegalStatus, QueryCategory, Language
 from generation.personalizer import build_prompt
 from generation.comparator import add_comparison, has_relevant_comparison
 
-
-# ─── Тести personalizer ───────────────────────────────────────────────────────
-
 class TestPersonalizer:
     def _make_profile(self, status=LegalStatus.temporary_protection, region="Bayern", lang="uk") -> UserProfile:
         return UserProfile(
@@ -87,9 +84,6 @@ class TestPersonalizer:
 
         assert "Ausländerbehörde" in prompt
 
-
-# ─── Тести comparator ────────────────────────────────────────────────────────
-
 class TestComparator:
     def _ua_chunk(self, text: str, distance: float = 0.3) -> dict:
         return {
@@ -138,9 +132,6 @@ class TestComparator:
 
         assert "social_benefits_comparison.txt" in result
 
-
-# ─── Тест повного пайплайну з mock OpenAI ────────────────────────────────────
-
 class TestGenerator:
     def test_generate_calls_openai_and_returns_result(self):
         """Повний RAG-пайплайн повертає GenerationResult з mock OpenAI."""
@@ -163,7 +154,7 @@ class TestGenerator:
         mock_openai_response.choices[0].message.content = "Відповідь про Bürgergeld для Берліна."
 
         with (
-            patch("generation.generator.retrieve_parallel", return_value=(mock_german_chunks, mock_ua_chunks)),
+            patch("generation.generator.retrieve_parallel_enhanced", return_value=(mock_german_chunks, mock_ua_chunks)),
             patch("generation.generator._get_openai_client") as mock_client_factory,
         ):
             mock_client = MagicMock()
@@ -186,7 +177,7 @@ class TestGenerator:
         mock_response.choices[0].message.content = "Проста відповідь."
 
         with (
-            patch("generation.generator.retrieve_parallel", return_value=([], [])),
+            patch("generation.generator.retrieve_parallel_enhanced", return_value=([], [])),
             patch("generation.generator._get_openai_client") as mock_client_factory,
         ):
             mock_client = MagicMock()

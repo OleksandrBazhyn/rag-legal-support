@@ -18,8 +18,6 @@ class StateManager:
         self.state_file = Path(state_file)
         self._state: dict[str, Any] = self._load()
 
-    # ── Persistence ───────────────────────────────────────────────────────────
-
     def _load(self) -> dict[str, Any]:
         if not self.state_file.exists():
             return {"documents": {}}
@@ -34,8 +32,6 @@ class StateManager:
             json.dumps(self._state, ensure_ascii=False, indent=2, default=str),
             encoding="utf-8",
         )
-
-    # ── Document state ────────────────────────────────────────────────────────
 
     def get_doc(self, output_path: str) -> dict[str, Any]:
         return self._state.setdefault("documents", {}).get(output_path, {})
@@ -63,8 +59,6 @@ class StateManager:
 
     def all_docs(self) -> dict[str, dict]:
         return self._state.get("documents", {})
-
-    # ── Rada token ────────────────────────────────────────────────────────────
 
     def get_rada_token(self) -> Optional[str]:
         """Повертає дійсний токен Ради або None якщо протермінований/відсутній."""

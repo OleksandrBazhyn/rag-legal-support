@@ -1,5 +1,5 @@
 {
-  "last_indexed": "2026-05-18T18:32:37",
+  "last_indexed": "2026-05-24T11:54:21",
   "indexed_files": {
     "agg.txt": "0dbd22b0ded034a87632c65cfe98c72416ecd5a4e6341528cc19cf5e454c4d13",
     "arbeitszeitgesetz.txt": "01fc43005ddaf4fb3695af2e3309f86b176549fa883c64c8a16d61d37cfb9364",
@@ -28,6 +28,12 @@
     "ua_idp_law.txt": "2495af8f4036a85d06c1306d33d489931b15333cd17a956b7c872ecc7ec4e9e4",
     "ua_labor_code.txt": "e977cab7aba27bf19bb9a2124c1ab9cd5d3d2a808f27e674a86ff017758c527d",
     "ua_law_refugees.txt": "c12318f90a7b7e5d3b4272e82fff640ea084c0663889ea87a292fca49cef8e65",
-    "ua_social_services.txt": "7bb1215b0bde94302fdd9d65218055de4f038958c884a895efda5c190d2ea102"
+    "ua_social_services.txt": "7bb1215b0bde94302fdd9d65218055de4f038958c884a895efda5c190d2ea102",
+    "BSG B 14 AS 2322 R.txt": "a748b85c4defb5494a18cb764d8519e382053d6a171565ff371f6a40e7dda2ee",
+    "BSG B 4 AS 623 R (2024).txt": "4a967f43cb6d8bdcab6a2214a90cbf9d549524d107e4c8b068878b0e3862ac3c",
+    "BSG B 4 AS 923 R.txt": "06e9fb704f5a355a2ccee0a694742fb0d655b4632c1f95062b3b9184afebed70",
+    "C-7222 PPU (2022).txt": "3eee3b846bef589af2d91edb731fde96757ce6d81cddfcf2ab07970bb14c3fa2",
+    "Case C-7222 PPU.txt": "2e98218e8bd76f1c1d01a5d6b452a694470803142993155c21ff3a0acc2e7fe0",
+    "Judgment, 30062022, ECLIEUC2022505.txt": "5366a9a8584c52d8e451ef0706a6e3b148284c208493177278beff1cf82abb63"
   }
 }

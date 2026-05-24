@@ -56,9 +56,6 @@ def _http_get(url: str, headers: dict[str, str] | None = None) -> tuple[bytes, d
             logger.warning("Мережева помилка для %s: %s", url, exc)
     raise last_exc
 
-
-# ─── kmein/gesetze ───────────────────────────────────────────────────────────
-
 _kmein_tree_cache: list[dict] | None = None
 
 
@@ -125,7 +122,7 @@ def fetch_kmein(
     stored_sha = state.get_github_sha(output_path)
 
     if not force and stored_sha == remote_sha:
-        logger.info("⏩ Cached (SHA збігається): %s", output_path)
+        logger.info("Cached (SHA збігається): %s", output_path)
         return None, "cached"
 
     # Завантажуємо через raw URL
@@ -142,8 +139,6 @@ def fetch_kmein(
     logger.info("✅ Завантажено з kmein: %s (%d bytes)", filename, len(body))
     return body, "downloaded"
 
-
-# ─── EUR-Lex ─────────────────────────────────────────────────────────────────
 
 def _is_waf_response(raw: bytes) -> bool:
     """Перевіряє, чи відповідь є AWS WAF-сторінкою (bot challenge)."""
@@ -187,7 +182,7 @@ def fetch_eurlex(
         body, resp_headers = _http_get(url, headers)
     except HTTPError as exc:
         if exc.code == 304:
-            logger.info("⏩ EUR-Lex Not Modified: %s", output_path)
+            logger.info("EUR-Lex Not Modified: %s", output_path)
             return None, "cached"
         logger.error("EUR-Lex HTTP %d для %s", exc.code, url)
         return None, "error"
@@ -214,17 +209,15 @@ def fetch_eurlex(
         file_size_bytes=len(body),
         is_valid=True,
     )
-    logger.info("✅ Завантажено з EUR-Lex: %s (%d bytes)", output_path, len(body))
+    logger.info("Завантажено з EUR-Lex: %s (%d bytes)", output_path, len(body))
     return body, "downloaded"
 
 
-# ─── data.rada.gov.ua ────────────────────────────────────────────────────────
-#
 # За документацією API:
 #   - TXT формат: User-Agent: OpenData  (токен НЕ потрібен)
 #   - JSON формат: User-Agent: <uuid-токен> (потребує реєстрації IP)
 #   - ЗАБОРОНЕНО: звертатись до /api/token перед кожним запитом
-#   Джерело: https://data.rada.gov.ua → розділ API
+#   Джерело: https://data.rada.gov.ua розділ API
 
 
 def fetch_rada(
@@ -263,7 +256,7 @@ def fetch_rada(
             body, resp_headers = _http_get(url, headers)
         except HTTPError as exc:
             if exc.code == 304:
-                logger.info("⏩ Рада Not Modified: %s (%s)", output_path, nreg)
+                logger.info("Рада Not Modified: %s (%s)", output_path, nreg)
                 return None, "cached"
             if exc.code == 404:
                 logger.warning("Рада: nreg %s не знайдено (404)", nreg)
@@ -307,5 +300,5 @@ def fetch_rada(
         file_size_bytes=len(body),
         is_valid=True,
     )
-    logger.info("✅ Завантажено з Ради: %s (%s, %d bytes)", nreg, output_path, len(body))
+    logger.info("Завантажено з Ради: %s (%s, %d bytes)", nreg, output_path, len(body))
     return body, "downloaded"

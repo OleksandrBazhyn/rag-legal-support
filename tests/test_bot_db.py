@@ -8,7 +8,6 @@ from pathlib import Path
 
 import pytest
 
-# ── Ізоляція: тести використовують окремий тимчасовий SQLite-файл ─────────────
 # Імпортуємо db БЕЗ patch-контексту, потім вручну перенаправляємо DB_PATH.
 # patch() як контекстний менеджер відновлює значення після виходу — нам це не треба.
 import bot.db as db
@@ -36,8 +35,6 @@ def _clean_test_data():
     yield
     _wipe_test_rows()
 
-
-# ─── Профіль ─────────────────────────────────────────────────────────────────
 
 class TestSaveLoadProfile:
     def test_load_nonexistent_returns_none(self):
@@ -84,9 +81,6 @@ class TestSaveLoadProfile:
         db.save_profile(10020, {"legal_status": "unknown", "region": "unknown", "language": "uk"})
         loaded = db.load_profile(10020)
         assert loaded is not None
-
-
-# ─── Документи ───────────────────────────────────────────────────────────────
 
 class TestDocuments:
     def _profile(self, uid: int) -> None:
@@ -141,9 +135,6 @@ class TestDocuments:
         types = {d["doc_type"] for d in docs}
         assert "Bürgergeld Bescheid" in types
         assert "Aufenthaltstitel §24" in types
-
-
-# ─── Нагадування ─────────────────────────────────────────────────────────────
 
 class TestReminders:
     def _setup_user(self, uid: int, days_until_expiry: int) -> str:

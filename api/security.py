@@ -10,8 +10,6 @@ from __future__ import annotations
 import re
 import unicodedata
 
-# ── Prompt Injection: патерни атак ────────────────────────────────────────────
-
 # Перевірені реальні вектори атак на LLM-системи
 _INJECTION_PATTERNS: list[re.Pattern] = [re.compile(p, re.IGNORECASE | re.DOTALL) for p in [
     # Перевизначення ролі / інструкцій
@@ -49,15 +47,13 @@ _INJECTION_PATTERNS: list[re.Pattern] = [re.compile(p, re.IGNORECASE | re.DOTALL
     r"repeat\s+(everything|all)\s+(above|before|you\s+said)",
 ]]
 
-# ── Підозрілі Unicode-символи (приховані інструкції) ─────────────────────────
-
 _SUSPICIOUS_UNICODE_CATEGORIES = {
     "Cf",   # Format characters (zero-width, soft hyphen…)
     "Co",   # Private Use
     "Cs",   # Surrogate
 }
 
-_MAX_SUSPICIOUS_UNICODE = 3  # більше трьох підозрілих символів → відхиляємо
+_MAX_SUSPICIOUS_UNICODE = 3  # більше трьох підозрілих символів - відхиляємо
 
 
 def _count_suspicious_unicode(text: str) -> int:
@@ -65,9 +61,6 @@ def _count_suspicious_unicode(text: str) -> int:
         1 for ch in text
         if unicodedata.category(ch) in _SUSPICIOUS_UNICODE_CATEGORIES
     )
-
-
-# ── Публічний API ─────────────────────────────────────────────────────────────
 
 class InjectionDetected(ValueError):
     """Виняток при виявленні спроби ін'єкції."""
@@ -127,7 +120,7 @@ def sanitize_for_log(text: str, max_chars: int = 120) -> str:
 
 def mask_ip(ip: str) -> str:
     """Маскує останній октет IPv4 або останні 4 групи IPv6 для логів."""
-    # IPv4: 192.168.1.42 → 192.168.1.***
+    # IPv4: 192.168.1.42 в 192.168.1.***
     if re.match(r"^\d+\.\d+\.\d+\.\d+$", ip):
         parts = ip.rsplit(".", 1)
         return parts[0] + ".***"

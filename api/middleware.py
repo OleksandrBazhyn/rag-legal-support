@@ -18,9 +18,6 @@ from api.security import mask_ip
 import logging
 logger = logging.getLogger(__name__)
 
-
-# ── Rate Limiter ──────────────────────────────────────────────────────────────
-
 # Ендпоінти, на які поширюється rate limit (за вартістю виклику OpenAI)
 _RATE_LIMITED_PATHS = {"/query", "/query/stream"}
 
@@ -72,7 +69,6 @@ class RateLimitMiddleware(BaseHTTPMiddleware):
             cutoff  = now - self._window
             ip      = _get_client_ip(request)
 
-            # ── Глобальний ліміт ──────────────────────────────────────────────
             self._cleanup(self._global_history, cutoff)
             if len(self._global_history) >= self._global_limit:
                 logger.warning("Rate limit GLOBAL: %d req/min exceeded", self._global_limit)
@@ -83,7 +79,6 @@ class RateLimitMiddleware(BaseHTTPMiddleware):
                 )
             self._global_history.append(now)
 
-            # ── Per-IP ліміт ──────────────────────────────────────────────────
             ip_dq = self._ip_history[ip]
             self._cleanup(ip_dq, cutoff)
 
@@ -105,7 +100,6 @@ class RateLimitMiddleware(BaseHTTPMiddleware):
                 )
             ip_dq.append(now)
 
-            # ── Cleanup пам'яті: кожні 500 запитів видаляємо порожні IP ───────
             self._request_counter += 1
             if self._request_counter % 500 == 0:
                 stale = [k for k, dq in self._ip_history.items() if not dq]
@@ -114,26 +108,41 @@ class RateLimitMiddleware(BaseHTTPMiddleware):
 
         return await call_next(request)
 
-
-# ── Security Headers ──────────────────────────────────────────────────────────
-
 class SecurityHeadersMiddleware(BaseHTTPMiddleware):
     """Додає стандартні HTTP security headers до кожної відповіді."""
 
-    # Content Security Policy: дозволяємо тільки те, що реально потрібно
-    _CSP = (
+    # CSP для API-ендпоінтів: суворий, тільки self
+    _CSP_STRICT = (
         "default-src 'self'; "
-        "script-src 'self' 'unsafe-inline'; "   # потрібен для inline JS у index.html
-        "style-src 'self' 'unsafe-inline'; "    # потрібен для inline CSS
+        "script-src 'self' 'unsafe-inline'; "
+        "style-src 'self' 'unsafe-inline'; "
         "img-src 'self' data:; "
         "font-src 'self'; "
         "connect-src 'self'; "
         "frame-ancestors 'none';"
     )
 
+    # CSP для Swagger UI: дозволяємо CDN jsdelivr та fastapi.tiangolo.com
+    _CSP_DOCS = (
+        "default-src 'self'; "
+        "script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; "
+        "style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; "
+        "img-src 'self' data: https://fastapi.tiangolo.com https://cdn.jsdelivr.net; "
+        "font-src 'self' https://cdn.jsdelivr.net; "
+        "connect-src 'self'; "
+        "frame-ancestors 'none';"
+    )
+
+    # Шляхи де діє полегшений CSP (Swagger UI)
+    _DOCS_PATHS = {"/docs", "/redoc", "/openapi.json"}
+
     async def dispatch(self, request: Request, call_next):
         response = await call_next(request)
         h = response.headers
+
+        path = request.url.path
+        csp = self._CSP_DOCS if path in self._DOCS_PATHS else self._CSP_STRICT
+
         h["X-Content-Type-Options"]        = "nosniff"
         h["X-Frame-Options"]               = "DENY"
         h["X-XSS-Protection"]             = "1; mode=block"
@@ -141,7 +150,7 @@ class SecurityHeadersMiddleware(BaseHTTPMiddleware):
         h["Permissions-Policy"]            = (
             "geolocation=(), microphone=(), camera=(), payment=()"
         )
-        h["Content-Security-Policy"]       = self._CSP
+        h["Content-Security-Policy"]       = csp
         # HSTS — вмикаємо тільки якщо сервер за HTTPS (reverse proxy встановить це)
         # h["Strict-Transport-Security"] = "max-age=31536000; includeSubDomains"
         return response

@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 FROM python:3.11-slim AS base
 
-# curl потрібен для healthcheck; libgomp1 — для sentence-transformers (OpenMP)
+# curl потрібен для healthcheck; libgomp1 для sentence-transformers (OpenMP)
 RUN apt-get update && apt-get install -y --no-install-recommends \
     curl \
     libgomp1 \
@@ -13,7 +13,7 @@ RUN groupadd --gid 1001 appgroup \
 
 WORKDIR /app
 
-# ── Шар залежностей ───────────────────────────────────────────────────────────
+# Шар залежностей
 FROM base AS deps
 
 COPY requirements.txt .
@@ -22,13 +22,13 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir --upgrade pip \
  && pip install --no-cache-dir -r requirements.txt
 
-# ── Образ API ─────────────────────────────────────────────────────────────────
+# Образ API
 FROM deps AS api
 
 COPY . /app
 
 # Директорія для даних (laws, SQLite) + кеш HuggingFace моделей
-# appuser не має home-директорії → HF_HOME вказує на /app/.cache
+# appuser не має home-директорії  HF_HOME вказує на /app/.cache
 RUN mkdir -p /app/data /app/.cache \
  && chown -R appuser:appgroup /app
 
@@ -45,7 +45,7 @@ USER appuser
 
 CMD ["uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "8000"]
 
-# ── Образ Telegram-бота ───────────────────────────────────────────────────────
+# Образ Telegram-бота
 FROM deps AS bot
 
 COPY . /app

@@ -8,9 +8,6 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
-
-# ─── test_state_manager_read_write ────────────────────────────────────────────
-
 def test_state_manager_read_write(tmp_path):
     """StateManager коректно зберігає та читає стан документів."""
     from data_collector.state_manager import StateManager
@@ -41,9 +38,6 @@ def test_state_manager_read_write(tmp_path):
     assert doc["github_sha"] == "abc123"
     assert doc["file_size_bytes"] == 512000
     assert doc["is_valid"] is True
-
-
-# ─── test_converter_md_to_txt ─────────────────────────────────────────────────
 
 def test_converter_md_to_txt():
     """md_to_text прибирає Markdown-розмітку та зберігає §-параграфи."""
@@ -79,9 +73,6 @@ def test_converter_md_to_txt():
     assert "Punkt 1" in result
     assert "Punkt 2" in result
 
-
-# ─── test_validator_rejects_empty ─────────────────────────────────────────────
-
 def test_validator_rejects_empty():
     """Порожній рядок не проходить валідацію."""
     from data_collector.validator import validate
@@ -100,9 +91,6 @@ def test_validator_rejects_too_short():
     tiny_text = "Kleiner Text." * 3
     result = validate(tiny_text, source_kind="kmein")
     assert not result.is_valid
-
-
-# ─── test_validator_rejects_html_error ────────────────────────────────────────
 
 def test_validator_rejects_html_error():
     """Текст що містить HTML-розмітку відхиляється як помилкова сторінка."""
@@ -124,9 +112,6 @@ Contact the administrator if you believe this is a mistake.
     result = validate(html_error, source_kind="eurlex")
     assert not result.is_valid
     assert "HTML" in result.reason or "html" in result.reason.lower()
-
-
-# ─── test_downloader_skips_unchanged ─────────────────────────────────────────
 
 def test_downloader_skips_unchanged(tmp_path):
     """Якщо SHA файлу не змінився, fetch_kmein повертає статус 'cached'."""

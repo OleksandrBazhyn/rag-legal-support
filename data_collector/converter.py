@@ -4,9 +4,6 @@ from __future__ import annotations
 import re
 from html.parser import HTMLParser
 
-
-# ─── Markdown → plain text ────────────────────────────────────────────────────
-
 def md_to_text(md_content: bytes | str) -> str:
     """Конвертує Markdown у plain text зі збереженням §-параграфів.
 
@@ -64,9 +61,6 @@ def md_to_text(md_content: bytes | str) -> str:
     text = re.sub(r"\n{3,}", "\n\n", text)
 
     return text.strip()
-
-
-# ─── HTML → plain text (EUR-Lex) ─────────────────────────────────────────────
 
 class _EurLexParser(HTMLParser):
     """Витягує текст з цільових div-елементів EUR-Lex HTML.

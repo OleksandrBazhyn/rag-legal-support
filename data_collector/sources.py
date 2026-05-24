@@ -18,18 +18,11 @@ class LegalDocument:
     """Описує один правовий документ та спосіб його отримання."""
 
     kind: SourceKind
-    output_path: str          # відносний шлях від data/  (напр. "german_law/aufenthaltsgesetz.txt")
+    output_path: str
     description: str
-
-    # ── kmein/gesetze ───────────────────────────────────────────────────────
-    # Функція відповідності: отримує ім'я файлу з репо, повертає True якщо збіг
     law_matcher: Optional[Callable[[str], bool]] = field(default=None, repr=False)
-
-    # ── EUR-Lex ──────────────────────────────────────────────────────────────
     celex_id: Optional[str] = None
     eurlex_url: Optional[str] = None
-
-    # ── data.rada.gov.ua ─────────────────────────────────────────────────────
     rada_nreg: Optional[str] = None
 
 
@@ -47,12 +40,7 @@ def _regex(pattern: str) -> Callable[[str], bool]:
         return bool(compiled.match(name))
     return matcher
 
-
-# ─── Каталог документів ───────────────────────────────────────────────────────
-
 DOCUMENTS: list[LegalDocument] = [
-
-    # ── kmein/gesetze: German laws ──────────────────────────────────────────
 
     LegalDocument(
         kind=SourceKind.KMEIN,
@@ -154,8 +142,6 @@ DOCUMENTS: list[LegalDocument] = [
         law_matcher=_prefix("AGG"),
     ),
 
-    # ── EUR-Lex: EU Directives ────────────────────────────────────────────────
-
     LegalDocument(
         kind=SourceKind.EURLEX,
         output_path="german_law/eu_directive_temporary_protection.txt",
@@ -170,8 +156,6 @@ DOCUMENTS: list[LegalDocument] = [
         celex_id="32013L0033",
         eurlex_url="https://eur-lex.europa.eu/legal-content/UK/TXT/HTML/?uri=CELEX:32013L0033",
     ),
-
-    # ── data.rada.gov.ua: Ukrainian laws ────────────────────────────────────
 
     LegalDocument(
         kind=SourceKind.RADA,
@@ -205,5 +189,4 @@ DOCUMENTS: list[LegalDocument] = [
     ),
 ]
 
-# Зручний індекс за output_path
 DOCUMENTS_BY_PATH: dict[str, LegalDocument] = {d.output_path: d for d in DOCUMENTS}

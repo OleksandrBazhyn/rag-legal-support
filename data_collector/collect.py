@@ -55,9 +55,6 @@ _STATS: dict[str, int] = {
     "invalid": 0,
 }
 
-
-# ─── Обробка одного документа ─────────────────────────────────────────────────
-
 def _process_document(doc: LegalDocument, state: StateManager, force: bool) -> str:
     """Завантажує, конвертує, валідує та зберігає один документ.
 
@@ -67,7 +64,6 @@ def _process_document(doc: LegalDocument, state: StateManager, force: bool) -> s
     output_file = DATA_DIR / doc.output_path
     output_file.parent.mkdir(parents=True, exist_ok=True)
 
-    # ── Завантаження ─────────────────────────────────────────────────────────
     if doc.kind == SourceKind.KMEIN:
         raw_bytes, status = fetch_kmein(doc.output_path, doc.law_matcher, state, force)
         convert_fn = md_to_text
@@ -94,15 +90,12 @@ def _process_document(doc: LegalDocument, state: StateManager, force: bool) -> s
 
     if status != "downloaded":
         return status
-
-    # ── Конвертація ───────────────────────────────────────────────────────────
     try:
         text = convert_fn(raw_bytes)
     except Exception as exc:
         logger.error("Помилка конвертації %s: %s", doc.output_path, exc)
         return "error"
 
-    # ── Валідація ─────────────────────────────────────────────────────────────
     result = validate(text, source_kind=doc.kind.value)
     if not result:
         logger.warning("Валідація провалена для %s: %s", doc.output_path, result.reason)
@@ -110,16 +103,12 @@ def _process_document(doc: LegalDocument, state: StateManager, force: bool) -> s
         state.save()
         return "invalid"
 
-    # ── Збереження ────────────────────────────────────────────────────────────
     output_file.write_text(text, encoding="utf-8")
     state.set_doc(doc.output_path, is_valid=True, file_size_bytes=len(text.encode()))
     state.save()
 
     logger.info("💾 Збережено: %s (%.1f KB)", doc.output_path, len(text) / 1024)
     return "downloaded"
-
-
-# ─── Режим check ──────────────────────────────────────────────────────────────
 
 def _cmd_check(state: StateManager, source_filter: str | None) -> None:
     """Виводить таблицю статусу всіх документів."""
@@ -155,9 +144,6 @@ def _cmd_check(state: StateManager, source_filter: str | None) -> None:
         )
 
     print()
-
-
-# ─── Режим update / full ──────────────────────────────────────────────────────
 
 def _cmd_collect(
     state: StateManager,
@@ -216,9 +202,6 @@ def _filter_docs(source_filter: str | None) -> list[LegalDocument]:
         print(f"Невідоме джерело: {source_filter}. Доступні: kmein, eurlex, rada")
         sys.exit(1)
     return [d for d in DOCUMENTS if d.kind == kind]
-
-
-# ─── CLI ──────────────────────────────────────────────────────────────────────
 
 def main() -> None:
     parser = argparse.ArgumentParser(

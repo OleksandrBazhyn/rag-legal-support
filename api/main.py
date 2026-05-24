@@ -45,6 +45,11 @@ async def lifespan(app: FastAPI):
     # Фонова індексація — НЕ блокуємо старт сервера
     _index_task  = asyncio.create_task(_background_reindex())
     _update_task = asyncio.create_task(_daily_update_loop())
+
+    # BM25 warmup: будуємо in-memory індекс для hybrid search (daemon thread)
+    from search.retriever import start_bm25_warmup
+    start_bm25_warmup()
+
     yield
     # Graceful shutdown
     _update_task.cancel()
@@ -55,21 +60,79 @@ async def lifespan(app: FastAPI):
         pass
 
 
+_OPENAPI_TAGS = [
+    {
+        "name": "Запити",
+        "description": (
+            "Основні ендпоінти для правових запитів. "
+            "`POST /query` — синхронна відповідь; "
+            "`POST /query/stream` — потокова (SSE) відповідь. "
+            "Для авторизованих користувачів діє денний ліміт запитів."
+        ),
+    },
+    {
+        "name": "Авторизація",
+        "description": (
+            "Реєстрація, вхід та управління профілем веб-користувача. "
+            "Після `/auth/login` або `/auth/register` отримайте `access_token` "
+            "та передавайте його у заголовку `Authorization: Bearer <token>`."
+        ),
+    },
+    {
+        "name": "Профіль",
+        "description": (
+            "Анонімне (без реєстрації) збереження профілю користувача. "
+            "Використовується Telegram-ботом та зовнішніми клієнтами."
+        ),
+    },
+    {
+        "name": "Система",
+        "description": "Healthcheck стану сервісу: доступність ChromaDB та OpenAI API.",
+    },
+    {
+        "name": "Адміністрування",
+        "description": (
+            "Адміністративні операції: переіндексація документів та оновлення бази знань. "
+        ),
+    },
+]
+
 app = FastAPI(
     lifespan=lifespan,
     title="Система правової підтримки для українців у Німеччині",
     description=(
-        "RAG-система, що надає персоналізовані відповіді на правові запити "
-        "українських громадян на території ФРН з урахуванням порівняльного "
-        "контексту між правовими системами України та Німеччини."
+        "## RAG-система правової підтримки для українських громадян у Німеччині\n\n"
+        "Надає персоналізовані відповіді на правові запити з урахуванням:\n"
+        "- правового статусу (§24 AufenthG, Aufenthaltserlaubnis, Asylbewerber)\n"
+        "- федеральної землі (Bayern, Berlin, NRW тощо)\n"
+        "- категорії запиту (соціальні виплати, зайнятість, освіта, медицина)\n\n"
+        "### Авторизація\n"
+        "Зареєструйтесь через `POST /auth/register`, отримайте `access_token` "
+        "і натисніть кнопку **Authorize** вгорі праворуч.\n\n"
+        "### Анонімний доступ\n"
+        "Ендпоінти `/query` та `/query/stream` доступні без токена "
+        "(використовуються Telegram-ботом)."
     ),
     version="1.0.0",
+    openapi_tags=_OPENAPI_TAGS,
     docs_url="/docs",
     redoc_url="/redoc",
+    swagger_ui_parameters={
+        "defaultModelsExpandDepth": 2,
+        "defaultModelExpandDepth": 3,
+        "displayRequestDuration": True,
+        "filter": True,
+        "tryItOutEnabled": True,
+    },
+    contact={
+        "name": "RAG Legal Support",
+        "url": "https://github.com/rag-legal-support",
+    },
+    license_info={
+        "name": "MIT",
+    },
 )
 
-# ── CORS: дозволяємо тільки конкретні origins ────────────────────────────────
-# У продакшні замініть на реальний домен. "*" залишаємо лише для localhost-dev.
 _ALLOWED_ORIGINS = os.getenv(
     "ALLOWED_ORIGINS",
     "http://localhost:8000,http://localhost:5500,http://127.0.0.1:8000",
@@ -83,7 +146,6 @@ app.add_middleware(
     allow_headers=["Content-Type", "Authorization"],
 )
 
-# ── Security middleware (порядок важливий: перший = зовнішній шар) ────────────
 app.add_middleware(SecurityHeadersMiddleware)
 app.add_middleware(
     RateLimitMiddleware,
@@ -96,7 +158,6 @@ app.include_router(query_router, tags=["Запити"])
 app.include_router(profile_router, tags=["Профіль"])
 app.include_router(health_router, tags=["Система"])
 
-# Статичні файли (веб-інтерфейс)
 web_dir = Path(__file__).parent.parent / "web"
 if web_dir.exists():
     app.mount("/web", StaticFiles(directory=str(web_dir), html=True), name="web")
@@ -110,10 +171,6 @@ async def root():
         "health": "/health",
         "web": "/web/",
     }
-
-
-# ─── Startup логіка (викликається з lifespan) ────────────────────────────────
-
 
 def _smart_reindex() -> None:
     """Синхронна логіка розумного re-index (виконується в thread pool)."""
@@ -169,9 +226,6 @@ def _collections_empty(client) -> bool:
         return True
     except Exception:
         return True
-
-
-# ─── Daily background update ─────────────────────────────────────────────────
 
 _DAILY_UPDATE_INTERVAL = int(os.getenv("DATA_UPDATE_INTERVAL_HOURS", "24")) * 3600
 
