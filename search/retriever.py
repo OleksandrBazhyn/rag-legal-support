@@ -560,7 +560,7 @@ class _QueryCache:
             self._store.clear()
 
 
-_query_cache = _QueryCache(ttl_seconds=300, max_entries=256)
+_query_cache = _QueryCache(ttl_seconds=600, max_entries=512)
 
 
 def retrieve(
@@ -630,8 +630,8 @@ def _retrieve_hybrid(
 ) -> list[dict]:
     """Hybrid-пошук у одній колекції: vector + BM25, злитих через RRF."""
     # Беремо більше кандидатів для злиття та подальшого reranking
-    # top_k * 4 дає cross-encoder більший пул для вибору → краще Context Precision
-    n_candidates = min(top_k * 4, 60)
+    # top_k * 3 (раніше * 4, cap 60→30): менше пар для cross-encoder → швидше
+    n_candidates = min(top_k * 3, 30)
 
     vector_res = retrieve(query, collection_name, top_k=n_candidates, client=client)
 

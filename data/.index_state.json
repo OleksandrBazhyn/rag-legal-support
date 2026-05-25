@@ -1,5 +1,5 @@
 {
-  "last_indexed": "2026-05-24T11:54:21",
+  "last_indexed": "2026-05-24T23:38:11",
   "indexed_files": {
     "agg.txt": "0dbd22b0ded034a87632c65cfe98c72416ecd5a4e6341528cc19cf5e454c4d13",
     "arbeitszeitgesetz.txt": "01fc43005ddaf4fb3695af2e3309f86b176549fa883c64c8a16d61d37cfb9364",
@@ -11,8 +11,8 @@
     "bkgg.txt": "ed2c0087fc5e40e0144c7a4ef2ca536d1c3cc691dd9d65bce29df9ec65b58d2d",
     "bqfg.txt": "a6377b5812f22ffe1af9893e3f2dcc4f149dfc9c1ae452ee71fc935ab05f6ef9",
     "bundesurlaubsgesetz.txt": "1edabbe42a58c7a90753452b33f50ab46b402dbc7d5029307bb77e24b3b8c0a2",
-    "eu_directive_reception_conditions.txt": "a8d303dea09b948bc47cb4d7c19b23d3d507579945c61bf607c4b3a700c81215",
-    "eu_directive_temporary_protection.txt": "51233935b4617eacd9e1ccd3aabad8d072bda0c3507a2964ccd551bb2918f09f",
+    "eu_directive_reception_conditions.txt": "a71e44330ed31d4a549d683ef48d2f79b5f9531eea23f786ab50d9d3f3d49500",
+    "eu_directive_temporary_protection.txt": "95dd0b1304161af674c60124714b3eb8ece73d68fc1f984d17f960438faa287e",
     "kuendigungsschutzgesetz.txt": "9feb12cb80b6eae118a5cf4f6e4f74ebb9e52dbd9910227320614df10e8a2b5a",
     "mindestlohngesetz.txt": "4bc512ecf45b6d9e9476baff2d37346b4cbc8cd52d41829ae7389cea578f3c5e",
     "schulpflicht.txt": "23f0b46998f275f900a31049a2ddc02bacf396658433d0a85e958858264d7bbf",

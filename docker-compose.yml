@@ -17,8 +17,8 @@ services:
     deploy:
       resources:
         limits:
-          memory: 512m
-          cpus: "1.0"
+          memory: 1g
+          cpus: "2.0"
     healthcheck:
       # bash /dev/tcp — вбудований TCP-коннект, не потребує curl/wget/python
       test: ["CMD", "bash", "-c", "exec 3<>/dev/tcp/localhost/8000"]
@@ -87,8 +87,8 @@ services:
     deploy:
       resources:
         limits:
-          memory: 2g                  # embedding-модель займає ~500 МБ
-          cpus: "2.0"
+          memory: 3g                  # embedding + cross-encoder
+          cpus: "4.0"                 # cross-encoder паралелізується на кількох ядрах
     healthcheck:
       test: ["CMD", "curl", "-sf", "http://localhost:8000/health"]
       interval: 15s
