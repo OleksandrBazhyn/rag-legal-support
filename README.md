@@ -1,5 +1,7 @@
 # rag-legal-support
 
+> **Archived thesis.** This repository is the diploma project (legal RAG for Ukrainians in Germany). The product continuation lives in a separate repository (`ua-legal-advisor`). Tagged release: `v1.0-diploma`.
+
 RAG-система правової підтримки для українців у Німеччині.
 
 [![Python](https://img.shields.io/badge/Python-3.11-blue)](https://python.org)
